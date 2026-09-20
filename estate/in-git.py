@@ -329,7 +329,7 @@ def check_escrow(d, _mm):
     return ok, holes
 
 
-STATE = os.path.join(HOME, ".claude", "state", "in-git-status.json")
+STATE = os.path.join(HOME, ".estate", "state", "in-git-status.json")
 GREEN_EVERY_S = 24 * 3600
 
 
@@ -361,7 +361,7 @@ def deliver(holes, lines):
         print("[in-git] change alert delivered=%s" % ok)
         return
 
-    stamp = os.path.join(HOME, ".claude", "state", "in-git-last-green.txt")
+    stamp = os.path.join(HOME, ".estate", "state", "in-git-last-green.txt")
     try:
         last = float(open(stamp).read().strip())
     except (OSError, ValueError):

@@ -96,7 +96,7 @@ def staged_blobs(paths):
 #: The two checkouts every session on this machine shares. A commit here is
 #: never one agent's private business, because five other sessions have the same
 #: working tree open and stage into the same index.
-SHARED = ("/.claude/scripts", "/.claude")
+SHARED = ("/Documents/code/claude-estate/scripts", "/Documents/code/claude-estate")
 
 
 def shared_branch_warning():
@@ -151,13 +151,13 @@ FORBIDDEN = "projects/"
 
 
 def refuse_projects(paths):
-    """Paths under projects/ staged in the ~/.claude checkout, if any."""
+    """Paths under projects/ staged in a checkout that must never hold them, if any."""
     try:
         top = subprocess.run(["git", "rev-parse", "--show-toplevel"],
                              capture_output=True, text=True).stdout.strip()
     except Exception:
         return []
-    if not top.endswith("/.claude"):
+    if not top.endswith("/claude-estate"):
         return []
     return [p for p in paths if p.startswith(FORBIDDEN)]
 
@@ -180,7 +180,7 @@ def silent_handlers(paths, blobs):
         return []
     #: Only this checkout. The gate is global now, and refusing a swallowed
     #: write in somebody else's repository is an opinion, not a guard.
-    if not top.endswith("/.claude/scripts"):
+    if not top.endswith("/claude-estate/scripts"):
         return []
     try:
         import silent_side_effect as det
@@ -227,7 +227,7 @@ def silent_handlers(paths, blobs):
 #: The rule is the pairing, not the file. Ciphertext plus a private remote is the
 #: design working. Ciphertext plus a public remote is a decision nobody made.
 CIPHERTEXT = (b"age-encryption.org/v1", b"-----BEGIN PGP MESSAGE")
-VIS_CACHE = os.path.join(os.path.expanduser("~"), ".claude", "state", "repo-visibility.json")
+VIS_CACHE = os.path.join(os.path.expanduser("~"), ".estate", "state", "repo-visibility.json")
 
 
 def _remote_is_public():
@@ -269,7 +269,7 @@ def _remote_is_public():
         with open(VIS_CACHE, "w") as fh:
             json.dump(cache, fh)
     except OSError as exc:
-        sys.path.append(os.path.join(os.path.expanduser("~"), ".claude", "scripts"))
+        sys.path.append(os.path.join(os.path.expanduser("~"), ".estate", "state"))
         import guard_report
         guard_report.broken(__file__, 0, f"cannot cache repo visibility: {exc}")
     return public

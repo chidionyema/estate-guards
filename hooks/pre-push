@@ -67,7 +67,7 @@ TRUNK = {"main", "master"}
 #: LAW 22's escape hatch, same shape as LAW 7's.
 EVIDENCE_OK = re.compile(r"(?im)^\s*No-Evidence:\s*\S")
 #: The tool that already knows what evidence looks like. Do not reimplement it.
-PR_EVIDENCE = os.path.expanduser("~/.claude/scripts/pr-evidence.py")
+PR_EVIDENCE = os.path.expanduser("~/Documents/code/claude-estate/scripts/pr-evidence.py")
 
 
 def git(*args):
@@ -281,7 +281,7 @@ def evidence(local_ref, shas):
 
 #: The scanner. Written once, in one place, so pre-push and the scheduled sweep
 #: over the public repositories cannot drift apart on what a credential is.
-sys.path.insert(0, os.path.expanduser("~/.claude/scripts"))
+sys.path.insert(0, os.path.expanduser("~/Documents/code/claude-estate/scripts"))
 try:
     import repo_secrets
 except Exception:                      # a missing scanner must not wedge every push

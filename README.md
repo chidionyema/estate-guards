@@ -43,8 +43,8 @@ out. The commit here and the pointer move in the parent are one action, in the
 same turn, every time:
 
 ```
-git -C ~/.claude/scripts commit -m "..." && git -C ~/.claude/scripts push
-git -C ~/.claude add scripts && git -C ~/.claude commit -m "point at <sha>" && git -C ~/.claude push
+git -C ~/Documents/code/claude-estate/scripts commit -m "..." && git -C ~/Documents/code/claude-estate/scripts push
+git -C ~/Documents/code/claude-estate add scripts && git -C ~/Documents/code/claude-estate commit -m "point at <sha>" && git -C ~/Documents/code/claude-estate push
 ```
 
 `tracked.py --check` fails on a stale pointer and runs every 30 minutes, so the
