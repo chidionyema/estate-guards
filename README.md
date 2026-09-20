@@ -1,7 +1,7 @@
-# claude-guards
+# estate-guards
 
 The code behind the estate. This repository is the `scripts/` submodule of
-[claude-estate](https://github.com/chidionyema/claude-estate). Clone the parent
+[estate-core](https://github.com/chidionyema/estate-core). Clone the parent
 with `--recurse-submodules`; on its own this repository restores nothing.
 
 Private, and it stays private. It carries this machine's paths and the hostnames
