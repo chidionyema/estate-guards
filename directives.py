@@ -10,9 +10,9 @@ sent. This side does two jobs:
                without writing a bespoke scanner for the fifth time.
 
 Examples:
-    python3 ~/.claude/scripts/directives.py --backfill
-    python3 ~/.claude/scripts/directives.py --grep 'laptop|emergenc' --limit 40
-    python3 ~/.claude/scripts/directives.py --since 2026-08-18 --full
+    python3 $HOME/Documents/code/claude-guards/directives.py --backfill
+    python3 $HOME/Documents/code/claude-guards/directives.py --grep 'laptop|emergenc' --limit 40
+    python3 $HOME/Documents/code/claude-guards/directives.py --since 2026-08-18 --full
 """
 from __future__ import annotations
 
@@ -75,7 +75,7 @@ def _queued_human_prompt(rec: dict) -> str | None:
 def selftest() -> int:
     """Prove the two things that were broken on 2026-08-20, so neither can come back silently.
 
-    Run:  python3 ~/.claude/scripts/directives.py --selftest
+    Run:  python3 $HOME/Documents/code/claude-guards/directives.py --selftest
     """
     line = json.dumps({
         "type": "attachment",

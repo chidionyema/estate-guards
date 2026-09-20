@@ -10,14 +10,14 @@
        that unsigned Homebrew/uv interpreters trigger under launchd. -->
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/chidionyema/.kimi-bridge/venv/bin/python</string>
-    <string>/Users/chidionyema/.claude/scripts/kimi_bridge.py</string>
+    <string>/usr/local/bin/python3</string>
+    <string>/Users/roseonyema/Documents/code/claude-guards/kimi_bridge.py</string>
     <string>--daemon</string>
   </array>
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
-    <string>/Users/chidionyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <string>/Users/roseonyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
     <!-- Headless: the daemon's browser must never appear on screen by itself.
          The login flag is the one time a window is wanted, and that path sets
          this to false for its own run.
@@ -34,8 +34,8 @@
        ever; the machine owns it after that (LAW 27). -->
   <key>KeepAlive</key><true/>
   <key>ThrottleInterval</key><integer>10</integer>
-  <key>StandardOutPath</key><string>/Users/chidionyema/.kimi-bridge/logs/daemon.log</string>
-  <key>StandardErrorPath</key><string>/Users/chidionyema/.kimi-bridge/logs/daemon.log</string>
-  <key>WorkingDirectory</key><string>/Users/chidionyema/.kimi-bridge</string>
+  <key>StandardOutPath</key><string>/Users/roseonyema/.kimi-bridge/logs/daemon.log</string>
+  <key>StandardErrorPath</key><string>/Users/roseonyema/.kimi-bridge/logs/daemon.log</string>
+  <key>WorkingDirectory</key><string>/Users/roseonyema/.kimi-bridge</string>
 </dict>
 </plist>

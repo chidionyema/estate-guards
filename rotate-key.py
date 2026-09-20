@@ -182,7 +182,7 @@ def main() -> int:
     install(name, value, paths)
     del value
 
-    scrub = HOME / ".claude/scripts/secret-scrub.py"
+    scrub = pathlib.Path(os.environ.get("GUARDS_ROOT") or pathlib.Path(__file__).resolve().parent) / "secret-scrub.py"
     if scrub.exists():
         subprocess.run([sys.executable, str(scrub)], check=False)
     print()

@@ -10,18 +10,18 @@
          the module directly is how it ran for weeks posting to an empty token. -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/chidionyema/dev/code/maestro/bin/maestro-run</string>
+        <string>/Users/roseonyema/Documents/code/maestro/bin/maestro-run</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/chidionyema/dev/code/maestro</string>
+    <string>/Users/roseonyema/Documents/code/maestro</string>
 
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
         <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
         <key>MAESTRO_HOME</key>
-        <string>/Users/chidionyema/dev/code/maestro</string>
+        <string>/Users/roseonyema/Documents/code/maestro</string>
     </dict>
 
     <key>RunAtLoad</key>
@@ -37,8 +37,8 @@
     <integer>30</integer>
 
     <key>StandardOutPath</key>
-    <string>/Users/chidionyema/dev/code/maestro/logs/maestro.out.log</string>
+    <string>/Users/roseonyema/Documents/code/maestro/logs/maestro.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/chidionyema/dev/code/maestro/logs/maestro.err.log</string>
+    <string>/Users/roseonyema/Documents/code/maestro/logs/maestro.err.log</string>
 </dict>
 </plist>

@@ -11,17 +11,17 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/bin/sh</string>
-		<string>/Users/chidionyema/.claude/scripts/stuck_detector_tick.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/stuck_detector_tick.sh</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/stuck-detector.err</string>
+	<string>/Users/roseonyema/.estate/state/logs/stuck-detector.err</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/stuck-detector.jsonl</string>
+	<string>/Users/roseonyema/.estate/state/logs/stuck-detector.jsonl</string>
 	<key>StartInterval</key>
 	<integer>311</integer>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema</string>
+	<string>/Users/roseonyema</string>
 </dict>
 </plist>

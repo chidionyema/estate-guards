@@ -11,7 +11,8 @@
 # which is a different and checkable fault.
 set -u
 PY=/usr/local/bin/python3
-OUT=$("$PY" "$HOME/.claude/scripts/stuck_detector.py" --json 2>&1)
+GUARDS_ROOT="${GUARDS_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+OUT=$("$PY" "$GUARDS_ROOT/stuck_detector.py" --json 2>&1)
 RC=$?
 if [ -n "$OUT" ]; then
   N=$(printf '%s\n' "$OUT" | grep -c .)

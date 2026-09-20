@@ -14,21 +14,21 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/launchd_receipt.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/launchd_receipt.py</string>
 		<string>--label</string>
 		<string>com.prospector-control.receipt-bridge</string>
 		<string>--script</string>
 		<string>engine_failover.py</string>
 		<string>--</string>
-		<string>/Users/chidionyema/.prospector/bin/failover</string>
+		<string>/Users/roseonyema/.prospector/bin/failover</string>
 		<string>receipts</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.prospector/logs/com.prospector-control.receipt-bridge.log</string>
+	<string>/Users/roseonyema/.prospector/logs/com.prospector-control.receipt-bridge.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.prospector/logs/com.prospector-control.receipt-bridge.log</string>
+	<string>/Users/roseonyema/.prospector/logs/com.prospector-control.receipt-bridge.log</string>
 	<key>StartInterval</key>
 	<integer>919</integer>
 </dict>

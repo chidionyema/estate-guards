@@ -37,23 +37,23 @@
          (_load_env_file), so API keys reach the process WITHOUT ever living in this tracked plist. -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/chidionyema/Documents/code/prospector/.venv/bin/python</string>
+        <string>/Users/roseonyema/Documents/code/prospector/.venv/bin/python</string>
         <string>-m</string>
         <string>prospector.scheduler.run_scheduled</string>
         <string>--daemon</string>
         <string>--interval</string>
         <string>7200</string>
         <string>--config</string>
-        <string>/Users/chidionyema/Documents/code/prospector/config.yaml</string>
+        <string>/Users/roseonyema/Documents/code/prospector/config.yaml</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/chidionyema/Documents/code/prospector</string>
+    <string>/Users/roseonyema/Documents/code/prospector</string>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
         <key>HOME</key>
-        <string>/Users/chidionyema</string>
+        <string>/Users/roseonyema</string>
     </dict>
     <key>RunAtLoad</key>
     <true/>
@@ -62,8 +62,8 @@
     <key>ThrottleInterval</key>
     <integer>30</integer>
     <key>StandardOutPath</key>
-    <string>/Users/chidionyema/Documents/code/prospector/store/scheduler/launchd.out.log</string>
+    <string>/Users/roseonyema/Documents/code/prospector/store/scheduler/launchd.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/chidionyema/Documents/code/prospector/store/scheduler/launchd.err.log</string>
+    <string>/Users/roseonyema/Documents/code/prospector/store/scheduler/launchd.err.log</string>
 </dict>
 </plist>

@@ -16,18 +16,18 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/tracked.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/tracked.py</string>
 		<string>--sync</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/tracked-guard.err.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/tracked-guard.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/tracked-guard.out.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/tracked-guard.out.log</string>
 	<key>StartInterval</key>
 	<integer>1783</integer>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/.claude/scripts</string>
+	<string>/Users/roseonyema/Documents/code/claude-guards</string>
 </dict>
 </plist>

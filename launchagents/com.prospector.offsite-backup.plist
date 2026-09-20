@@ -5,11 +5,11 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 		<key>PROSPECTOR_STORE_DIR</key>
-		<string>/Users/chidionyema/Documents/code/prospector/store</string>
+		<string>/Users/roseonyema/Documents/code/prospector/store</string>
 	</dict>
 	<key>Label</key>
 	<string>com.prospector.offsite-backup</string>
@@ -17,17 +17,17 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>prospector-offsite-backup</string>
-		<string>/Users/chidionyema/Documents/code/prospector-live/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/prospector-live/.venv/bin/python</string>
 		<string>-m</string>
 		<string>ops.automations.offsite_backup</string>
 		<string>--fix</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/offsite_backup.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/offsite_backup.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/offsite_backup.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/offsite_backup.log</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
@@ -36,6 +36,6 @@
 		<integer>50</integer>
 	</dict>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/Documents/code/prospector-live</string>
+	<string>/Users/roseonyema/Documents/code/prospector-live</string>
 </dict>
 </plist>

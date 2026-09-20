@@ -132,7 +132,7 @@ def save_marks(ledger: Path, marks: "dict[str, int]") -> None:
     try:
         marks_path(ledger).write_text(json.dumps(marks))
     except Exception:
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 134))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 134))
         except Exception: pass
 
 

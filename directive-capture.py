@@ -11,7 +11,7 @@ Transcripts are the raw material. This is the index. One append per prompt, with
 what matters, because what matters is only knowable later.
 
 UserPromptSubmit hook. It never blocks and never fails a turn: any error exits 0 silently.
-Read it back with:  python3 ~/.claude/scripts/directives.py --grep migration
+Read it back with:  python3 $HOME/Documents/code/claude-guards/directives.py --grep migration
 """
 from __future__ import annotations
 

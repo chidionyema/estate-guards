@@ -5,11 +5,11 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 		<key>PROSPECTOR_STORE_DIR</key>
-		<string>/Users/chidionyema/Documents/code/prospector/store</string>
+		<string>/Users/roseonyema/Documents/code/prospector/store</string>
 	</dict>
 	<key>Label</key>
 	<string>com.prospector.log-rotation</string>
@@ -17,7 +17,7 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/Documents/code/prospector-live/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/prospector-live/.venv/bin/python</string>
 		<string>-m</string>
 		<string>ops.automations.log_rotation</string>
 		<string>--fix</string>
@@ -25,9 +25,9 @@
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/log_rotation.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/log_rotation.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/log_rotation.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/log_rotation.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
@@ -56,6 +56,6 @@
 		</dict>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/Documents/code/prospector-live</string>
+	<string>/Users/roseonyema/Documents/code/prospector-live</string>
 </dict>
 </plist>

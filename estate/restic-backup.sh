@@ -3,7 +3,8 @@
 # Replaces nothing destructively: the old offsite backup jobs keep running
 # as fallback (founder order). Run wrapped: hc-wrap.sh estate-restic <this>.
 set -eu
-. "$HOME/.claude/scripts/estate/restic-env.sh"
+GUARDS_ROOT="${GUARDS_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+. "$GUARDS_ROOT/estate/restic-env.sh"
 
 # Tranche 1: load-bearing un-versioned state (~50 MB measured 2026-08-24).
 # Transcripts (~/.claude/projects) stay with the old offsite job for now.

@@ -13,18 +13,18 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>graphify-sweep</string>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/dev/code/prospector-main/scripts/graphify_sweep.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector-main/scripts/graphify_sweep.py</string>
 		<string>--fix</string>
 		<string>--root</string>
-		<string>/Users/chidionyema/dev/code</string>
+		<string>/Users/roseonyema/Documents/code</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/graphify-sweep.log</string>
+	<string>/Users/roseonyema/.estate/state/graphify-sweep.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/graphify-sweep.log</string>
+	<string>/Users/roseonyema/.estate/state/graphify-sweep.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

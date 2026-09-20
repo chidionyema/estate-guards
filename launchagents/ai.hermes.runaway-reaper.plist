@@ -5,11 +5,11 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>ESTATE_HOME</key>
-		<string>/Users/chidionyema/.estate</string>
+		<string>/Users/roseonyema/.estate</string>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 		<key>PATH</key>
-		<string>/usr/local/bin:/usr/bin:/bin:/Users/chidionyema/.local/bin</string>
+		<string>/usr/local/bin:/usr/bin:/bin:/Users/roseonyema/.local/bin</string>
 	</dict>
 	<key>Label</key>
 	<string>ai.hermes.runaway-reaper</string>
@@ -18,22 +18,22 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/launchd_receipt.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/launchd_receipt.py</string>
 		<string>--label</string>
 		<string>ai.hermes.runaway-reaper</string>
 		<string>--</string>
 		<string>/bin/bash</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/runaway-reaper.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/runaway-reaper.sh</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.estate/logs/runaway-reaper.err.log</string>
+	<string>/Users/roseonyema/.estate/logs/runaway-reaper.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.estate/logs/runaway-reaper.out.log</string>
+	<string>/Users/roseonyema/.estate/logs/runaway-reaper.out.log</string>
 	<key>StartInterval</key>
 	<integer>307</integer>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/.estate</string>
+	<string>/Users/roseonyema/.estate</string>
 </dict>
 </plist>

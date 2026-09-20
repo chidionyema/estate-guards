@@ -21,6 +21,15 @@ written to the output; token findings carry file, line, prefix and length only.
 """
 from __future__ import annotations
 
+# --- guards root bootstrap: find the repo root from anywhere, no ~/.claude path ---
+import pathlib as _gr_pl, sys as _gr_sys
+_gr_here = _gr_pl.Path(__file__).resolve()
+for _gr_p in [_gr_here.parent, *_gr_here.parents]:
+    if (_gr_p / "guards_root.py").exists():
+        _gr_sys.path.insert(0, str(_gr_p)); break
+else:
+    raise RuntimeError("guards_root.py not found above " + str(_gr_here))
+# --- end bootstrap ---
 import argparse
 import concurrent.futures as futures
 import html
@@ -162,17 +171,17 @@ def c_guards() -> list[dict]:
             no_self.append(f.name)
     rc, sub = sh("cd ~/.claude && git ls-files -s scripts | head -1 | awk '{print $1}'")
     out = [row("agent", "Guard and probe scripts", f"{len(files)} files / {lines:,} lines",
-               WARN, "ls ~/.claude/scripts/*.py *.sh; wc -l",
+               WARN, "ls $HOME/Documents/code/claude-guards/*.py *.sh; wc -l",
                "This is the enforcement layer. It runs on this machine only and is not covered by CI.")]
     if no_self:
         out.append(row("agent", "Scripts with no selftest", str(len(no_self)), WARN,
-                       "grep -L -- --selftest ~/.claude/scripts/*", ", ".join(no_self[:8])))
+                       "grep -L -- --selftest $HOME/Documents/code/claude-guards/*", ", ".join(no_self[:8])))
     if sub.strip() == "160000":
         out.append(row("agent", "scripts/ is a git submodule of ~/.claude", "160000", WARN,
                        "git ls-files -s scripts",
                        "Commits to a guard land in the submodule, not the outer repo. "
                        "A reviewer reading ~/.claude sees a pointer bump, not the diff."))
-    rc, o = sh("python3 ~/.claude/scripts/memory-loop.py --selftest 2>&1 | tail -2")
+    rc, o = sh("python3 $HOME/Documents/code/claude-guards/memory-loop.py --selftest 2>&1 | tail -2")
     bad = "FAIL" in o.upper() or re.search(r"\b([0-9]+) of ([0-9]+)", o) and \
         (lambda m: m and m.group(1) != m.group(2))(re.search(r"\b([0-9]+) of ([0-9]+)", o))
     out.append(row("agent", "Laws injector selftest", o.splitlines()[-1][:70] if o else "no output",
@@ -741,7 +750,7 @@ def c_ci_reach() -> list[dict]:
                 fh.write(json.dumps({"at": stamp, "repo": repo, "visibility": vis,
                                      "healed": healed, "last5": outcomes}) + "\n")
         except OSError:
-            try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 636))
+            try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 636))
             except Exception: pass
         if healed.startswith("failed"):
             sev, note = CRIT, (f"found private and could not be put back: {healed}. Every job "
@@ -1118,7 +1127,7 @@ def c_founder_actions() -> list[dict]:
     it. An item no command can settle reads UNKNOWN, never CLEAN, because the honest answer
     to "did he back the key up" is that this machine cannot tell.
     """
-    reg = subprocess.run([sys.executable, str(pathlib.Path.home() / ".claude/scripts/founder_actions.py"),
+    reg = subprocess.run([sys.executable, str(__import__("guards_root").GUARDS_ROOT / "founder_actions.py"),
                           "--json"], capture_output=True, text=True, timeout=45)
     if reg.returncode != 0 and not reg.stdout.strip():
         return [row("access", "Waiting on the founder", "UNKNOWN", UNK,

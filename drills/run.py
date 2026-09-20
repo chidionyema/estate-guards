@@ -20,6 +20,15 @@ writing. They are counted in every report and they do NOT make --check red: a
 gate that is red forever is a gate people stop reading, which is the failure this
 file exists to stop.
 """
+# --- guards root bootstrap: find the repo root from anywhere, no ~/.claude path ---
+import pathlib as _gr_pl, sys as _gr_sys
+_gr_here = _gr_pl.Path(__file__).resolve()
+for _gr_p in [_gr_here.parent, *_gr_here.parents]:
+    if (_gr_p / "guards_root.py").exists():
+        _gr_sys.path.insert(0, str(_gr_p)); break
+else:
+    raise RuntimeError("guards_root.py not found above " + str(_gr_here))
+# --- end bootstrap ---
 import argparse
 import json
 import os
@@ -171,7 +180,7 @@ def post(kind, text):
         sys.stderr.write("drills: the verdict did not reach the board: "
                          "%s: %s\n" % (type(exc).__name__, exc))
         try:
-            sys.path.append(os.path.expanduser("~/.claude/scripts"))
+            sys.path.insert(0, str(__import__("guards_root").GUARDS_ROOT))
             import guard_report
             guard_report.broken(__file__, 128,
                                 "the drill verdict could not be posted to the board: "

@@ -15,12 +15,12 @@
 	<array>
 		<string>/bin/sh</string>
 		<string>-c</string>
-		<string>python3 "$HOME/.claude/scripts/session-timeout.py"; python3 "$HOME/.claude/scripts/auto-objective.py" --scan</string>
+		<string>python3 "$HOME/Documents/code/claude-guards/session-timeout.py"; python3 "$HOME/Documents/code/claude-guards/auto-objective.py" --scan</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/logs/session-timeout.log</string>
+	<string>/Users/roseonyema/.estate/logs/session-timeout.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/logs/session-timeout.log</string>
+	<string>/Users/roseonyema/.estate/logs/session-timeout.log</string>
 	<key>StartInterval</key>
 	<integer>300</integer>
 </dict>

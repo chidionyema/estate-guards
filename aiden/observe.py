@@ -29,7 +29,10 @@ STATE = os.path.join(HOME, ".claude", "state", "aiden-observe.json")
 #: The meter already exists. Importing it means one set of prices, one dedup
 #: rule, and no second ledger to fall out of step with the first.
 _spec = importlib.util.spec_from_file_location(
-    "token_audit", os.path.join(HOME, ".claude", "scripts", "token-audit.py"))
+    "token_audit", os.path.join(
+        os.environ.get("GUARDS_ROOT")
+        or os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "token-audit.py"))
 _ta = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_ta)
 

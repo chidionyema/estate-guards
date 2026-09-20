@@ -23,7 +23,13 @@ LIVE = os.path.expanduser("~/Library/LaunchAgents")
 
 
 def fill(v, home):
-    if isinstance(v, str):  return v.replace("{HOME}", home)
+    if isinstance(v, str):
+        # {GUARDS_ROOT} is where THIS repo lives, found from this file rather than
+        # named in the manifest. Before it, every job pointed at {HOME}/.claude/scripts --
+        # a vendor-named path that stopped existing when .claude was retired, so all 28
+        # plists named a directory that was not there (AGENTS.md 0.1, 0.3).
+        return (v.replace("{HOME}", home)
+                 .replace("{GUARDS_ROOT}", os.path.dirname(HERE)))
     if isinstance(v, list): return [fill(x, home) for x in v]
     if isinstance(v, dict): return {k: fill(x, home) for k, x in v.items()}
     return v

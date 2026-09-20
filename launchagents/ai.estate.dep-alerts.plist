@@ -5,7 +5,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>Label</key>
 	<string>ai.estate.dep-alerts</string>
@@ -16,12 +16,12 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/dep_alerts.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/dep_alerts.py</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/logs/dep-alerts.log</string>
+	<string>/Users/roseonyema/.estate/logs/dep-alerts.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/logs/dep-alerts.log</string>
+	<string>/Users/roseonyema/.estate/logs/dep-alerts.log</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
@@ -30,6 +30,6 @@
 		<integer>10</integer>
 	</dict>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/.claude/scripts</string>
+	<string>/Users/roseonyema/Documents/code/claude-guards</string>
 </dict>
 </plist>

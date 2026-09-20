@@ -5,7 +5,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 		<key>PATH</key>
 		<string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
@@ -15,19 +15,19 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>estate-inventory-real</string>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.estate/scripts/inventory.py</string>
+		<string>/Users/roseonyema/.estate/scripts/inventory.py</string>
 		<string>--deliver</string>
 		<string>--duplicates</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.estate/state/logs/inventory.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/inventory.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.estate/state/logs/inventory.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/inventory.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
@@ -56,6 +56,6 @@
 		</dict>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/.estate</string>
+	<string>/Users/roseonyema/.estate</string>
 </dict>
 </plist>

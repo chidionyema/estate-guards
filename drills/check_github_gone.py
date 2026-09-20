@@ -20,13 +20,22 @@ MAX_AGE_DAYS. That is a copy which needs rclone and git and nothing from GitHub.
 BLIND, NOT GREEN. If the receipts file or the declaration cannot be read, this prints
 BLIND and exits 2. A drill that loses its evidence reports BLIND, never a verdict.
 """
+# --- guards root bootstrap: find the repo root from anywhere, no ~/.claude path ---
+import pathlib as _gr_pl, sys as _gr_sys
+_gr_here = _gr_pl.Path(__file__).resolve()
+for _gr_p in [_gr_here.parent, *_gr_here.parents]:
+    if (_gr_p / "guards_root.py").exists():
+        _gr_sys.path.insert(0, str(_gr_p)); break
+else:
+    raise RuntimeError("guards_root.py not found above " + str(_gr_here))
+# --- end bootstrap ---
 import json
 import os
 import sys
 import time
 
 RECEIPTS = os.path.expanduser("~/.claude/state/estate-bundle-push.jsonl")
-DECLARED = os.path.expanduser("~/.claude/scripts/estate/load-bearing.json")
+DECLARED = str(__import__("guards_root").GUARDS_ROOT / "estate" / "load-bearing.json")
 #: One day of slack over the pusher's 7-day escrow cadence, so a single missed
 #: weekly run is not an alert and two of them are.
 MAX_AGE_DAYS = float(os.environ.get("GITHUB_GONE_MAX_AGE_DAYS", 8))

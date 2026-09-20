@@ -10,14 +10,14 @@
 	<string>Background</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>estate-restic</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/restic-backup.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/restic-backup.sh</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/restic-backup.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/restic-backup.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/restic-backup.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/restic-backup.log</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>

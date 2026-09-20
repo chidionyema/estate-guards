@@ -30,7 +30,7 @@
       "why": "what the estate has learned; injected into every session, so losing it costs every agent the same week twice (LAW 30)"
     },
     {
-      "path": "~/.claude/scripts/tracked.json",
+      "path": "~/Documents/code/claude-guards/tracked.json",
       "why": "the manifest this guard reads"
     },
     {
@@ -54,7 +54,7 @@
       "private": true
     },
     {
-      "path": "~/.claude/scripts",
+      "path": "~/Documents/code/claude-guards",
       "why": "the guards, the board, the mirror",
       "branch": "main",
       "public_by_ruling": "founder, 2026-08-23: 'sort this out nake then public if u have 2'. Private repos on this account have every Actions job refused before its first step, so a ships-from repo is public on purpose. c_ci_reach() in estate_audit.py owns its visibility and heals it; do not add 'private' back here."

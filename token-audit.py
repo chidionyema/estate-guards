@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Token-spend probe for Claude Code sessions.  READ-ONLY.
 
-    python3 ~/.claude/scripts/token-audit.py [project-slug] [--detail SESSION_PREFIX]
+    python3 $HOME/Documents/code/claude-guards/token-audit.py [project-slug] [--detail SESSION_PREFIX]
 
 Reads ~/.claude/projects/<slug>/*.jsonl (the session transcripts) and reconstructs the
 billed cost from the `usage` block each API response carries.  This is the probe that

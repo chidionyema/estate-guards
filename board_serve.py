@@ -284,7 +284,7 @@ def _admin_page(minted: str = "", note: str = "") -> bytes:
             f"<div class='l'>{e(k)}</div></div>"
             for k, v in counts.items()) + "</div>")
     body.append("<div class='card'><div class='l'>rebuild now</div>"
-                "<code>python3 ~/.claude/scripts/estate/estate_audit.py --html --state</code></div>")
+                "<code>python3 $HOME/Documents/code/claude-guards/estate/estate_audit.py --html --state</code></div>")
     body.append("<h2>Mint a link</h2><form method='POST' action='/admin/mint'>"
                 "<input type='text' name='label' placeholder='who is it for?' maxlength='60'> "
                 f"<button type='submit'>Mint a {TOKEN_TTL_S // 3600}-hour link</button></form>")
@@ -339,7 +339,7 @@ class Handler(BaseHTTPRequestHandler):
             self._send(409, (f"REFUSED. This audit is {int(age / 60)} minutes old and the deadline "
                              f"is {AUDIT_STALE_S // 60}. A stale audit is not served, because an "
                              f"audit you can read past its deadline is not enforced.\n"
-                             f"Rebuild: python3 ~/.claude/scripts/estate/estate_audit.py --html --state\n"
+                             f"Rebuild: python3 $HOME/Documents/code/claude-guards/estate/estate_audit.py --html --state\n"
                              ).encode(), "text/plain")
             return
         try:

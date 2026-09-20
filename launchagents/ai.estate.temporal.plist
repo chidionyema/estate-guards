@@ -13,9 +13,9 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/chidionyema/.kimi-code/bin:/Users/chidionyema/.local/bin:/usr/local/opt/node@20/bin:/Users/chidionyema/anaconda3/bin:/Users/chidionyema/anaconda3/condabin:/Users/chidionyema/.cargo/bin:/Users/chidionyema/.rvm/bin</string>
+		<string>/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/roseonyema/.kimi-code/bin:/Users/roseonyema/.local/bin:/usr/local/opt/node@20/bin:/Users/roseonyema/anaconda3/bin:/Users/roseonyema/anaconda3/condabin:/Users/roseonyema/.cargo/bin:/Users/roseonyema/.rvm/bin</string>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 	</dict>
 	<key>Label</key>
 	<string>ai.estate.temporal</string>
@@ -25,7 +25,7 @@
 		<string>server</string>
 		<string>start-dev</string>
 		<string>--db-filename</string>
-		<string>/Users/chidionyema/.estate/temporal/dev.db</string>
+		<string>/Users/roseonyema/.estate/temporal/dev.db</string>
 		<string>--namespace</string>
 		<string>estate</string>
 		<string>--headless</string>
@@ -35,10 +35,10 @@
 	<key>KeepAlive</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.estate/sovereign/logs/temporal-launchd.log</string>
+	<string>/Users/roseonyema/.estate/sovereign/logs/temporal-launchd.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.estate/sovereign/logs/temporal-launchd.log</string>
+	<string>/Users/roseonyema/.estate/sovereign/logs/temporal-launchd.log</string>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/dev/code/idp</string>
+	<string>/Users/roseonyema/Documents/code/idp</string>
 </dict>
 </plist>

@@ -163,7 +163,7 @@ def broadcast_red(new: list[tuple[Path, str]]) -> str:
         f"reads them cannot parse. {listed}. A service refuses the whole file at "
         f"startup and anything waiting on its health is never created, which reads "
         f"as 'not started yet' rather than as a fault. "
-        f"Run: python3 ~/.claude/scripts/config-syntax-sweep.py"
+        f"Run: python3 $HOME/Documents/code/claude-guards/config-syntax-sweep.py"
     )
     try:
         r = subprocess.run(

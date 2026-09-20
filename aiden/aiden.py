@@ -39,7 +39,10 @@ _OBS_KEY = "aiden_observe"
 observe = sys.modules.get(_OBS_KEY)
 if observe is None:
     _spec = importlib.util.spec_from_file_location(
-        _OBS_KEY, os.path.join(HOME, ".claude", "scripts", "aiden", "observe.py"))
+        _OBS_KEY, os.path.join(
+            os.environ.get("GUARDS_ROOT")
+            or os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "aiden", "observe.py"))
     observe = importlib.util.module_from_spec(_spec)
     sys.modules[_OBS_KEY] = observe
     _spec.loader.exec_module(observe)

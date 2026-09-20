@@ -5,9 +5,9 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>Label</key>
 	<string>com.prospector.estate-inventory</string>
@@ -15,22 +15,22 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/Documents/code/prospector-live/.venv/bin/python</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/launchd_receipt.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector-live/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/launchd_receipt.py</string>
 		<string>--label</string>
 		<string>com.prospector.estate-inventory</string>
 		<string>--</string>
-		<string>/Users/chidionyema/Documents/code/prospector-live/.venv/bin/python</string>
-		<string>/Users/chidionyema/Documents/code/prospector-live/scripts/estate_inventory.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector-live/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/prospector-live/scripts/estate_inventory.py</string>
 		<string>--out</string>
-		<string>/Users/chidionyema/Documents/code/prospector-live/store/estate_inventory.json</string>
+		<string>/Users/roseonyema/Documents/code/prospector-live/store/estate_inventory.json</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector-live/store/estate_inventory.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector-live/store/estate_inventory.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector-live/store/estate_inventory.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector-live/store/estate_inventory.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
@@ -41,6 +41,6 @@
 		</dict>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/Documents/code/prospector-live</string>
+	<string>/Users/roseonyema/Documents/code/prospector-live</string>
 </dict>
 </plist>

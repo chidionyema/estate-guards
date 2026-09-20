@@ -17,19 +17,19 @@
 	<string>Background</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>ingit</string>
-		<string>/Users/chidionyema/.estate/guards/bin/estate-gate</string>
+		<string>/Users/roseonyema/.estate/guards/bin/estate-gate</string>
 		<string>com.founder.ingit</string>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/in-git.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/in-git.py</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/ingit.err.log</string>
+	<string>/Users/roseonyema/.estate/state/ingit.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/ingit.out.log</string>
+	<string>/Users/roseonyema/.estate/state/ingit.out.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
@@ -106,6 +106,6 @@
 		</dict>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/.claude/scripts/estate</string>
+	<string>/Users/roseonyema/Documents/code/claude-guards/estate</string>
 </dict>
 </plist>

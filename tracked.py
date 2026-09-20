@@ -328,7 +328,7 @@ def board(kind, text, source="tracked.py"):
                         .strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "from": source, "kind": kind, "text": text}) + "\n")
     except OSError:
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 215))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 215))
         except Exception: pass
 
 

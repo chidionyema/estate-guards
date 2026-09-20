@@ -102,7 +102,7 @@ def scan(path):
 def main():
     strict = "--strict" in sys.argv
     roots = [a for a in sys.argv[1:] if not a.startswith("-")] or \
-            [os.path.expanduser("~/.claude/scripts")]
+            [str(__import__("guards_root").GUARDS_ROOT)]
     hits = []
     for root in roots:
         for dirpath, dirnames, filenames in os.walk(root):

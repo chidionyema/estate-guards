@@ -5,7 +5,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>Label</key>
 	<string>com.chidionyema.reflect</string>
@@ -13,21 +13,21 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/Documents/code/prospector/.venv/bin/python</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/launchd_receipt.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/launchd_receipt.py</string>
 		<string>--label</string>
 		<string>com.chidionyema.reflect</string>
 		<string>--</string>
-		<string>/Users/chidionyema/Documents/code/prospector/.venv/bin/python</string>
-		<string>/Users/chidionyema/.claude/scripts/reflect.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/reflect.py</string>
 		<string>--json</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/reflect.log</string>
+	<string>/Users/roseonyema/.estate/logs/reflect.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/reflect.log</string>
+	<string>/Users/roseonyema/.estate/logs/reflect.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

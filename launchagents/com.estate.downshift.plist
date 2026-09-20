@@ -5,7 +5,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>Label</key>
 	<string>com.estate.downshift</string>
@@ -14,14 +14,14 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/estate_downshift.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/estate_downshift.py</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/logs/downshift.err.log</string>
+	<string>/Users/roseonyema/.estate/logs/downshift.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/logs/downshift.log</string>
+	<string>/Users/roseonyema/.estate/logs/downshift.log</string>
 	<key>StartInterval</key>
 	<integer>907</integer>
 </dict>

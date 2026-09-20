@@ -19,11 +19,10 @@ work because its own lookup broke is a guard somebody deletes by lunchtime.
 THE CARVE-OUTS ARE NOT TIDINESS, THEY ARE LOAD-BEARING, and each was reported by the session
 that owns it on 2026-08-23:
 
-  ~/.claude, ~/.claude/scripts   The path IS the product. Claude Code reads settings, skills and
-                                 the laws from ~/.claude, and 29 launchd jobs name
-                                 ~/.claude/scripts as the program they run. Runners resolve their
-                                 own program path, so a symlink at the old path would not save
-                                 them. ~/.claude/scripts is also a git submodule of ~/.claude.
+  ~/.claude                     Claude Code reads settings, skills and the laws from here. The
+                                 path IS the product for that tool.
+  ~/Documents/code/claude-guards The guard scripts. Addressed by guards_root.py rather than a
+                                 vendor-named home path; the path IS the product for the estate.
   ~/AGENTS.md                    laws-link-guard.py owns this topology and treats "moved, with a
                                  symlink left behind" as damage to repair.
   ~/Documents/code/prospector    com.chidionyema.reflect (StartInterval 14400) hardcodes
@@ -45,6 +44,9 @@ EXEMPT = (
     pathlib.Path.home() / ".codex",
     pathlib.Path.home() / ".gemini",
     pathlib.Path.home() / "Documents" / "code" / "prospector",
+    # 2026-09-20: the guard scripts. 31 launchd jobs, the hook layer and the backups all
+    # resolve here; outside the canonical root, load-bearing, so carved out like prospector.
+    pathlib.Path.home() / "Documents" / "code" / "claude-guards",
     pathlib.Path("/private/tmp/claude-501"),
     pathlib.Path("/tmp"),
     pathlib.Path("/var/folders"),
@@ -98,7 +100,11 @@ def selftest() -> int:
         # Each of these was reported by the session that owns it. A guard that nags about them
         # is a guard that gets switched off, and then it protects nothing.
         ("~/.claude is carved out: the path is the product", home / ".claude", "exempt"),
-        ("~/.claude/scripts is carved out: 29 launchd jobs name it", home / ".claude/scripts", "exempt"),
+        # 2026-09-20: the guard scripts moved off the vendor-named path into the repo, which
+        # sits outside the canonical root. Load-bearing for 31 launchd jobs and the hook layer,
+        # exactly like prospector, so it is carved out the same way.
+        ("~/Documents/code/claude-guards is carved out: the guard scripts live there",
+         home / "Documents/code/claude-guards", "exempt"),
         # crew#13: ~/.hermes is retired; the launchd wrapper lives in ~/.claude/scripts/estate now
         ("~/.hermes/scripts is no longer carved out", home / ".hermes/scripts", "outside"),
         ("prospector is carved out: com.chidionyema.reflect hardcodes it",

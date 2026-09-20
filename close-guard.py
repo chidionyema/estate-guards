@@ -193,7 +193,7 @@ def save_state(state: dict) -> None:
         tmp.write_text(json.dumps(state), encoding="utf-8")
         tmp.replace(STATE)
     except Exception:  # noqa: BLE001 - failing to record must never fail the turn
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 177))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 177))
         except Exception: pass
 
 
@@ -292,7 +292,7 @@ def observe(path: Path, session: str) -> None:
         with OBSERVE.open("a", encoding="utf-8") as fh:
             fh.write(line + "\n")          # O_APPEND, one line, well under the pipe buffer
     except Exception:  # noqa: BLE001
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 275))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 275))
         except Exception: pass
 
 

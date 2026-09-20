@@ -73,7 +73,7 @@
     "KeepAlive": true,
     "ProgramArguments": [
       "{PYTHON3_SYSTEM}",
-      "{HOME}/.claude/scripts/consultd.py",
+      "{GUARDS_ROOT}/consultd.py",
       "serve"
     ],
     "RunAtLoad": true,
@@ -108,7 +108,7 @@
     "KeepAlive": true,
     "ProgramArguments": [
       "{HOME}/.kimi-bridge/venv/bin/python",
-      "{HOME}/.claude/scripts/kimi_bridge.py",
+      "{GUARDS_ROOT}/kimi_bridge.py",
       "--daemon"
     ],
     "RunAtLoad": true,
@@ -134,7 +134,7 @@
     "Nice": 10,
     "ProgramArguments": [
       "{PYTHON3_SYSTEM}",
-      "{HOME}/.claude/scripts/estate/dep_alerts.py"
+      "{GUARDS_ROOT}/estate/dep_alerts.py"
     ],
     "StandardErrorPath": "{HOME}/.claude/logs/dep-alerts.log",
     "StandardOutPath": "{HOME}/.claude/logs/dep-alerts.log",
@@ -142,7 +142,7 @@
       "Hour": 8,
       "Minute": 10
     },
-    "WorkingDirectory": "{HOME}/.claude/scripts",
+    "WorkingDirectory": "{GUARDS_ROOT}",
     "label": "ai.estate.dep-alerts"
   },
   "ai.estate.drills": {
@@ -161,7 +161,7 @@
     "Nice": 10,
     "ProgramArguments": [
       "{PYTHON3_SYSTEM}",
-      "{HOME}/.claude/scripts/drills/run.py",
+      "{GUARDS_ROOT}/drills/run.py",
       "--all"
     ],
     "StandardErrorPath": "{HOME}/.claude/logs/drills.log",
@@ -170,7 +170,7 @@
       "Hour": 4,
       "Minute": 30
     },
-    "WorkingDirectory": "{HOME}/.claude/scripts",
+    "WorkingDirectory": "{GUARDS_ROOT}",
     "label": "ai.estate.drills"
   },
   "ai.estate.key-escrow": {
@@ -189,7 +189,7 @@
     "Nice": 10,
     "ProgramArguments": [
       "{PYTHON3_SYSTEM}",
-      "{HOME}/.claude/scripts/estate/key_escrow.py",
+      "{GUARDS_ROOT}/estate/key_escrow.py",
       "--seal"
     ],
     "StandardErrorPath": "{HOME}/.claude/logs/key-escrow.log",
@@ -198,7 +198,7 @@
       "Hour": 5,
       "Minute": 10
     },
-    "WorkingDirectory": "{HOME}/.claude/scripts",
+    "WorkingDirectory": "{GUARDS_ROOT}",
     "label": "ai.estate.key-escrow"
   },
   "ai.estate.kimi-bridge": {
@@ -217,7 +217,7 @@
     "KeepAlive": true,
     "ProgramArguments": [
       "{HOME}/.kimi-bridge/venv/bin/python",
-      "{HOME}/.claude/scripts/kimi_bridge.py",
+      "{GUARDS_ROOT}/kimi_bridge.py",
       "--daemon"
     ],
     "RunAtLoad": true,
@@ -240,14 +240,14 @@
     "ProcessType": "Background",
     "ProgramArguments": [
       "{PYTHON3_SYSTEM}",
-      "{HOME}/.claude/scripts/tracked.py",
+      "{GUARDS_ROOT}/tracked.py",
       "--sync"
     ],
     "RunAtLoad": true,
     "StandardErrorPath": "{HOME}/.claude/state/logs/tracked-guard.err.log",
     "StandardOutPath": "{HOME}/.claude/state/logs/tracked-guard.out.log",
     "StartInterval": 1783,
-    "WorkingDirectory": "{HOME}/.claude/scripts",
+    "WorkingDirectory": "{GUARDS_ROOT}",
     "label": "ai.estate.tracked-guard"
   },
   "ai.hermes.runaway-reaper": {
@@ -263,12 +263,12 @@
     },
     "ProgramArguments": [
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/estate/launchd_receipt.py",
+      "{GUARDS_ROOT}/estate/launchd_receipt.py",
       "--label",
       "ai.hermes.runaway-reaper",
       "--",
       "/bin/bash",
-      "{HOME}/.claude/scripts/estate/runaway-reaper.sh"
+      "{GUARDS_ROOT}/estate/runaway-reaper.sh"
     ],
     "RunAtLoad": true,
     "StandardErrorPath": "{HOME}/.estate/logs/runaway-reaper.err.log",
@@ -288,7 +288,7 @@
     },
     "Nice": 10,
     "ProgramArguments": [
-      "{HOME}/.claude/scripts/hc-wrap.sh",
+      "{GUARDS_ROOT}/hc-wrap.sh",
       "graphify-sweep",
       "{PYTHON3_USER}",
       "{HOME}/dev/code/prospector-main/scripts/graphify_sweep.py",
@@ -331,7 +331,7 @@
     },
     "ProgramArguments": [
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/estate-selftest.py",
+      "{GUARDS_ROOT}/estate-selftest.py",
       "--quiet",
       "--alert"
     ],
@@ -347,7 +347,7 @@
         "Minute": 15
       }
     ],
-    "WorkingDirectory": "{HOME}/.claude/scripts",
+    "WorkingDirectory": "{GUARDS_ROOT}",
     "label": "com.chidionyema.guard-selftest",
     "Nice": 10
   },
@@ -365,12 +365,12 @@
     "Nice": 10,
     "ProgramArguments": [
       "{HOME}/Documents/code/prospector/.venv/bin/python",
-      "{HOME}/.claude/scripts/estate/launchd_receipt.py",
+      "{GUARDS_ROOT}/estate/launchd_receipt.py",
       "--label",
       "com.chidionyema.reflect",
       "--",
       "{HOME}/Documents/code/prospector/.venv/bin/python",
-      "{HOME}/.claude/scripts/reflect.py",
+      "{GUARDS_ROOT}/reflect.py",
       "--json"
     ],
     "RunAtLoad": false,
@@ -419,7 +419,7 @@
     "ProcessType": "Background",
     "ProgramArguments": [
       "{HOME}/.claude/bin/estate-runner",
-      "{HOME}/.claude/scripts/estate/estate_bundle_push.sh"
+      "{GUARDS_ROOT}/estate/estate_bundle_push.sh"
     ],
     "RunAtLoad": false,
     "StandardErrorPath": "{HOME}/.claude/state/logs/estate-bundlepush.err.log",
@@ -490,10 +490,10 @@
     },
     "Nice": 10,
     "ProgramArguments": [
-      "{HOME}/.claude/scripts/hc-wrap.sh",
+      "{GUARDS_ROOT}/hc-wrap.sh",
       "estate-costsentinel",
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/estate/estate_cost_sentinel.py",
+      "{GUARDS_ROOT}/estate/estate_cost_sentinel.py",
       "--digest"
     ],
     "RunAtLoad": true,
@@ -516,7 +516,7 @@
     "Nice": 10,
     "ProgramArguments": [
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/estate/estate_downshift.py"
+      "{GUARDS_ROOT}/estate/estate_downshift.py"
     ],
     "RunAtLoad": true,
     "StandardErrorPath": "{HOME}/.claude/logs/downshift.err.log",
@@ -529,7 +529,7 @@
     "ProcessType": "Background",
     "ProgramArguments": [
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/founder_board.py",
+      "{GUARDS_ROOT}/founder_board.py",
       "--html",
       "{HOME}/.claude/state/founder-board.html"
     ],
@@ -593,7 +593,7 @@
     "KeepAlive": true,
     "ProgramArguments": [
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/board_serve.py"
+      "{GUARDS_ROOT}/board_serve.py"
     ],
     "RunAtLoad": true,
     "StandardErrorPath": "{HOME}/.claude/state/logs/board-serve.err",
@@ -606,7 +606,7 @@
   "com.founder.configsyntaxsweep": {
     "ProgramArguments": [
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/config-syntax-sweep.py",
+      "{GUARDS_ROOT}/config-syntax-sweep.py",
       "--broadcast-on-red"
     ],
     "RunAtLoad": false,
@@ -648,7 +648,7 @@
     },
     "ProgramArguments": [
       "{PYTHON3_SYSTEM}",
-      "{HOME}/.claude/scripts/estate/estate_audit.py",
+      "{GUARDS_ROOT}/estate/estate_audit.py",
       "--html",
       "--state"
     ],
@@ -690,7 +690,7 @@
     "Nice": 10,
     "ProgramArguments": [
       "{BASH}",
-      "{HOME}/.claude/scripts/estate/estate_push.sh"
+      "{GUARDS_ROOT}/estate/estate_push.sh"
     ],
     "RunAtLoad": false,
     "StandardErrorPath": "{HOME}/.claude/state/logs/estate-push.err.log",
@@ -750,7 +750,7 @@
   "com.founder.estatewatch": {
     "ProgramArguments": [
       "{PYTHON3_SYSTEM}",
-      "{HOME}/.claude/scripts/estate/estate_watch.py"
+      "{GUARDS_ROOT}/estate/estate_watch.py"
     ],
     "RunAtLoad": true,
     "StandardErrorPath": "{HOME}/.claude/state/logs/estate-watch.err.log",
@@ -764,7 +764,7 @@
     "ProcessType": "Background",
     "ProgramArguments": [
       "{SH}",
-      "{HOME}/.claude/scripts/stuck_detector_tick.sh"
+      "{GUARDS_ROOT}/stuck_detector_tick.sh"
     ],
     "RunAtLoad": true,
     "StandardErrorPath": "{HOME}/.claude/state/logs/stuck-detector.err",
@@ -808,7 +808,7 @@
     },
     "ProgramArguments": [
       "{PYTHON3_USER}",
-      "{HOME}/.claude/scripts/estate/launchd_receipt.py",
+      "{GUARDS_ROOT}/estate/launchd_receipt.py",
       "--label",
       "com.prospector-control.receipt-bridge",
       "--script",
@@ -838,10 +838,10 @@
       "PROSPECTOR_STORE_DIR": "{HOME}/Documents/code/prospector/store"
     },
     "ProgramArguments": [
-      "{HOME}/.claude/scripts/hc-wrap.sh",
+      "{GUARDS_ROOT}/hc-wrap.sh",
       "prospector-backup",
       "{HOME}/Documents/code/prospector-live/.venv/bin/python",
-      "{HOME}/.claude/scripts/estate/launchd_receipt.py",
+      "{GUARDS_ROOT}/estate/launchd_receipt.py",
       "--label",
       "com.prospector.backup",
       "--",
@@ -873,7 +873,7 @@
     },
     "ProgramArguments": [
       "{HOME}/Documents/code/prospector-live/.venv/bin/python",
-      "{HOME}/.claude/scripts/estate/launchd_receipt.py",
+      "{GUARDS_ROOT}/estate/launchd_receipt.py",
       "--label",
       "com.prospector.estate-inventory",
       "--",
@@ -910,7 +910,7 @@
     },
     "ProgramArguments": [
       "{HOME}/Documents/code/prospector/.venv/bin/python",
-      "{HOME}/.claude/scripts/estate/launchd_receipt.py",
+      "{GUARDS_ROOT}/estate/launchd_receipt.py",
       "--label",
       "com.prospector.launchd-held",
       "--",
@@ -1001,7 +1001,7 @@
       "PROSPECTOR_STORE_DIR": "{HOME}/Documents/code/prospector/store"
     },
     "ProgramArguments": [
-      "{HOME}/.claude/scripts/hc-wrap.sh",
+      "{GUARDS_ROOT}/hc-wrap.sh",
       "prospector-offsite-backup",
       "{HOME}/Documents/code/prospector-live/.venv/bin/python",
       "-m",
@@ -1033,7 +1033,7 @@
     },
     "ProgramArguments": [
       "{HOME}/Documents/code/prospector/.venv/bin/python",
-      "{HOME}/.claude/scripts/estate/launchd_receipt.py",
+      "{GUARDS_ROOT}/estate/launchd_receipt.py",
       "--label",
       "com.prospector.process-audit",
       "--",

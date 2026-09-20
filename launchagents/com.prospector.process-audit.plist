@@ -5,11 +5,11 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 		<key>PATH</key>
-		<string>/usr/local/bin:/Users/chidionyema/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/usr/local/bin:/Users/roseonyema/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 		<key>PROSPECTOR_STORE_DIR</key>
-		<string>/Users/chidionyema/Documents/code/prospector/store</string>
+		<string>/Users/roseonyema/Documents/code/prospector/store</string>
 	</dict>
 	<key>Label</key>
 	<string>com.prospector.process-audit</string>
@@ -17,22 +17,22 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/Documents/code/prospector/.venv/bin/python</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/launchd_receipt.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/launchd_receipt.py</string>
 		<string>--label</string>
 		<string>com.prospector.process-audit</string>
 		<string>--</string>
-		<string>/Users/chidionyema/Documents/code/prospector/.venv/bin/python</string>
-		<string>/Users/chidionyema/Documents/code/prospector/scripts/process_audit.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/prospector/scripts/process_audit.py</string>
 		<string>--quiet</string>
 		<string>--alert</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/scheduler/process-audit.err.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/scheduler/process-audit.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/scheduler/process-audit.out.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/scheduler/process-audit.out.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

@@ -580,22 +580,22 @@ def trend(events: list[dict], calls_by_month: Counter) -> None:
 #: cannot tell you it has gone stale. Each `check` is a command that prints the number.
 REGISTER: dict[str, dict] = {
     "proof / unverified claims": {
-        "check": "python3 ~/.claude/scripts/reflect.py --complaints",
+        "check": "python3 $HOME/Documents/code/claude-guards/reflect.py --complaints",
         "enforced_by": "stop-hook: every number in a reply must appear in a tool result",
         "script": None,
     },
     "repeating the same mistake": {
-        "check": "python3 ~/.claude/scripts/rule-guard.py --selftest",
+        "check": "python3 $HOME/Documents/code/claude-guards/rule-guard.py --selftest",
         "enforced_by": "rule-guard.py PreToolUse (5 rules)",
         "script": "rule-guard.py",
     },
     "efficiency / cost / speed": {
-        "check": "python3 ~/.claude/scripts/token-audit.py -Users-chidionyema",
+        "check": "python3 $HOME/Documents/code/claude-guards/token-audit.py -Users-chidionyema",
         "enforced_by": "tool-drip-guard.py, context-guard-hook.py",
         "script": "tool-drip-guard.py",
     },
     "tracking / duplication / other agents": {
-        "check": "python3 ~/.claude/scripts/reflect.py --json",
+        "check": "python3 $HOME/Documents/code/claude-guards/reflect.py --json",
         "enforced_by": None,
         "script": None,
     },
@@ -606,12 +606,12 @@ REGISTER: dict[str, dict] = {
         "script": None,
     },
     "rushing / scope / firefighting": {
-        "check": "python3 ~/.claude/scripts/rule-guard.py --selftest",
+        "check": "python3 $HOME/Documents/code/claude-guards/rule-guard.py --selftest",
         "enforced_by": "rule-guard.py rule_pr_size",
         "script": "rule-guard.py",
     },
     "process / no follow-up": {
-        "check": "python3 ~/.claude/scripts/reflect.py --trend",
+        "check": "python3 $HOME/Documents/code/claude-guards/reflect.py --trend",
         "enforced_by": None,
         "script": None,
     },
@@ -627,7 +627,7 @@ REGISTER: dict[str, dict] = {
         "script": None,
     },
     "items raised then dropped": {
-        "check": "python3 ~/.claude/scripts/reflect.py --json",
+        "check": "python3 $HOME/Documents/code/claude-guards/reflect.py --json",
         "enforced_by": "this register — an item with no check is printed as untracked",
         "script": None,
     },

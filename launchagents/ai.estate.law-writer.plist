@@ -10,18 +10,18 @@
 	<string>Background</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>law-writer</string>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/law-writer.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/law-writer.py</string>
 		<string>--write</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/law-writer.err</string>
+	<string>/Users/roseonyema/.estate/state/logs/law-writer.err</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/law-writer.out</string>
+	<string>/Users/roseonyema/.estate/state/logs/law-writer.out</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

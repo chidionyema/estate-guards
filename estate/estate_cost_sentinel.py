@@ -34,6 +34,15 @@ rounding error.
 """
 from __future__ import annotations
 
+# --- guards root bootstrap: find the repo root from anywhere, no ~/.claude path ---
+import pathlib as _gr_pl, sys as _gr_sys
+_gr_here = _gr_pl.Path(__file__).resolve()
+for _gr_p in [_gr_here.parent, *_gr_here.parents]:
+    if (_gr_p / "guards_root.py").exists():
+        _gr_sys.path.insert(0, str(_gr_p)); break
+else:
+    raise RuntimeError("guards_root.py not found above " + str(_gr_here))
+# --- end bootstrap ---
 import argparse
 import datetime as dt
 import json
@@ -144,7 +153,7 @@ def record(res: dict) -> None:
     if why:
         try:
             import sys as _sys
-            _sys.path.append(os.path.expanduser("~/.claude/scripts"))
+            _sys.path.insert(0, str(__import__("guards_root").GUARDS_ROOT))
             import guard_report
             guard_report.broken(__file__, 0, f"refused to record spend row: {why}")
         except Exception:
@@ -168,7 +177,7 @@ def record(res: dict) -> None:
                 "reread_pct": estate_spend.reread_pct(res.get("tokens", {})),
             }) + "\n")
     except OSError:
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 129))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 129))
         except Exception: pass
 
 

@@ -11,17 +11,17 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/board_serve.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/board_serve.py</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>KeepAlive</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/board-serve.err</string>
+	<string>/Users/roseonyema/.estate/state/logs/board-serve.err</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/board-serve.out</string>
+	<string>/Users/roseonyema/.estate/state/logs/board-serve.out</string>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema</string>
+	<string>/Users/roseonyema</string>
 </dict>
 </plist>

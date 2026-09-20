@@ -12,7 +12,7 @@ from __future__ import annotations
 import argparse, concurrent.futures as cf, json, os, pathlib, re, subprocess, sys, time
 
 HOME = pathlib.Path.home()
-ROOT = HOME / ".claude/scripts"
+ROOT = pathlib.Path(os.environ.get("GUARDS_ROOT") or pathlib.Path(__file__).resolve().parent)
 STATE = HOME / ".claude/state/estate-selftest.json"
 PREV = HOME / ".claude/state/estate-selftest.prev.json"
 PY3 = sys.executable or "python3"

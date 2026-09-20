@@ -175,7 +175,7 @@ def save(path: str, st: dict) -> None:
             json.dump(st, fh)
         os.replace(tmp, path)
     except Exception:
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 177))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 177))
         except Exception: pass
 
 
@@ -196,14 +196,14 @@ def emit(rule: str, **fields) -> None:
                 with open(EVENT_LOG, "w") as fh:
                     fh.writelines(tail)
         except OSError:
-            try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 197))
+            try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 197))
             except Exception: pass
         rec = {"t": round(time.time(), 3), "rule": rule}
         rec.update(fields)
         with open(EVENT_LOG, "a") as fh:
             fh.write(json.dumps(rec, default=str) + "\n")
     except Exception:
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 203))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 203))
         except Exception: pass
 
 

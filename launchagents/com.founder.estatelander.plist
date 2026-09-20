@@ -9,13 +9,13 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/python3</string>
-		<string>/Users/chidionyema/dev/code/crew/scripts/estate-lander</string>
+		<string>/Users/roseonyema/Documents/code/crew/scripts/estate-lander</string>
 		<string>--push</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/estate-lander.err.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/estate-lander.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/estate-lander.out.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/estate-lander.out.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

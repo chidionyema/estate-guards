@@ -10,6 +10,15 @@ Built 2026-06-20 after a syntax-broken commit crash-looped the gateway silently.
 """
 from __future__ import annotations
 
+# --- guards root bootstrap: find the repo root from anywhere, no ~/.claude path ---
+import pathlib as _gr_pl, sys as _gr_sys
+_gr_here = _gr_pl.Path(__file__).resolve()
+for _gr_p in [_gr_here.parent, *_gr_here.parents]:
+    if (_gr_p / "guards_root.py").exists():
+        _gr_sys.path.insert(0, str(_gr_p)); break
+else:
+    raise RuntimeError("guards_root.py not found above " + str(_gr_here))
+# --- end bootstrap ---
 import hashlib
 import json
 import os
@@ -78,7 +87,7 @@ def _debounced(key: str, window_s: float, record: bool = True) -> bool:
         _DEBOUNCE.parent.mkdir(parents=True, exist_ok=True)
         _DEBOUNCE.write_text(json.dumps(data))
     except OSError:
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 78))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 78))
         except Exception: pass
     return False
 

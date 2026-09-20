@@ -5,11 +5,11 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 		<key>PROSPECTOR_STORE_DIR</key>
-		<string>/Users/chidionyema/Documents/code/prospector/store</string>
+		<string>/Users/roseonyema/Documents/code/prospector/store</string>
 	</dict>
 	<key>Label</key>
 	<string>com.prospector.restore-drill</string>
@@ -19,24 +19,24 @@
 	<string>Background</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>restore-drill</string>
-		<string>/Users/chidionyema/Documents/code/prospector-live/.venv/bin/python</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/launchd_receipt.py</string>
+		<string>/Users/roseonyema/Documents/code/prospector-live/.venv/bin/python</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/launchd_receipt.py</string>
 		<string>--label</string>
 		<string>com.prospector.restore-drill</string>
 		<string>--script</string>
 		<string>offsite_restore_drill</string>
 		<string>--</string>
 		<string>/usr/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/drills/run.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/drills/run.py</string>
 		<string>--run</string>
 		<string>offsite-backup-restore</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/restore_drill.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/restore_drill.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/Documents/code/prospector/store/restore_drill.log</string>
+	<string>/Users/roseonyema/Documents/code/prospector/store/restore_drill.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
@@ -47,6 +47,6 @@
 		</dict>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/Documents/code/prospector-live</string>
+	<string>/Users/roseonyema/Documents/code/prospector-live</string>
 </dict>
 </plist>

@@ -9,15 +9,15 @@
        signed (scripts/sign-interpreters.sh) to stop the TCC re-prompt. -->
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/chidionyema/.kimi-bridge/venv/bin/python</string>
-    <string>/Users/chidionyema/.claude/scripts/kimi_bridge.py</string>
+    <string>/usr/local/bin/python3</string>
+    <string>/Users/roseonyema/Documents/code/claude-guards/kimi_bridge.py</string>
     <string>--daemon</string>
   </array>
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
-    <string>/Users/chidionyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-    <key>BRIDGE_HOME</key><string>/Users/chidionyema/.deepseek-bridge</string>
+    <string>/Users/roseonyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>BRIDGE_HOME</key><string>/Users/roseonyema/.deepseek-bridge</string>
     <key>BRIDGE_PORT</key><string>8767</string>
     <key>BRIDGE_URL</key><string>https://chat.deepseek.com/</string>
     <key>BRIDGE_HEADLESS</key><string>true</string>
@@ -33,8 +33,8 @@
   <key>RunAtLoad</key><true/>
   <key>KeepAlive</key><true/>
   <key>ThrottleInterval</key><integer>10</integer>
-  <key>StandardOutPath</key><string>/Users/chidionyema/.deepseek-bridge/logs/daemon.log</string>
-  <key>StandardErrorPath</key><string>/Users/chidionyema/.deepseek-bridge/logs/daemon.log</string>
-  <key>WorkingDirectory</key><string>/Users/chidionyema/.deepseek-bridge</string>
+  <key>StandardOutPath</key><string>/Users/roseonyema/.deepseek-bridge/logs/daemon.log</string>
+  <key>StandardErrorPath</key><string>/Users/roseonyema/.deepseek-bridge/logs/daemon.log</string>
+  <key>WorkingDirectory</key><string>/Users/roseonyema/.deepseek-bridge</string>
 </dict>
 </plist>

@@ -14,14 +14,14 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/estate-selftest.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate-selftest.py</string>
 		<string>--quiet</string>
 		<string>--alert</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/logs/guard-selftest.err</string>
+	<string>/Users/roseonyema/.estate/logs/guard-selftest.err</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/logs/guard-selftest.out</string>
+	<string>/Users/roseonyema/.estate/logs/guard-selftest.out</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
@@ -38,6 +38,6 @@
 		</dict>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/.claude/scripts</string>
+	<string>/Users/roseonyema/Documents/code/claude-guards</string>
 </dict>
 </plist>

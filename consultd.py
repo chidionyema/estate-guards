@@ -106,7 +106,7 @@ def log(row):
         try:
             (
                 __import__("sys").path.append(
-                    __import__("os").path.expanduser("~/.claude/scripts")
+                    str(__import__("guards_root").GUARDS_ROOT)
                 ),
                 __import__("guard_report").broken(__file__, 104),
             )

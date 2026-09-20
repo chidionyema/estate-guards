@@ -24,10 +24,10 @@ THREE RULES THE COLLECTORS OBEY, each one a failure this estate has already paid
   3. Every row carries the age of its measurement. A number with no age is a claim about the
      past presented as a claim about now.
 
-    python3 ~/.claude/scripts/founder_board.py              # print it
-    python3 ~/.claude/scripts/founder_board.py --html OUT   # write the page
-    python3 ~/.claude/scripts/founder_board.py --json       # machine-readable
-    python3 ~/.claude/scripts/founder_board.py --selftest
+    python3 $HOME/Documents/code/claude-guards/founder_board.py              # print it
+    python3 $HOME/Documents/code/claude-guards/founder_board.py --html OUT   # write the page
+    python3 $HOME/Documents/code/claude-guards/founder_board.py --json       # machine-readable
+    python3 $HOME/Documents/code/claude-guards/founder_board.py --selftest
 """
 from __future__ import annotations
 
@@ -235,7 +235,7 @@ def collect_estate_audit() -> list[Row]:
     Reads the JSON the audit already wrote; it does not re-run it. A board that shells a
     60-second scan is a board nobody loads.
     """
-    cmd = ["/usr/bin/python3", os.path.expanduser("~/.claude/scripts/estate/estate_watch.py"), "--json"]
+    cmd = ["/usr/bin/python3", str(__import__("guards_root").GUARDS_ROOT / "estate" / "estate_watch.py"), "--json"]
     rc, out, err = sh(cmd, 30)
     if rc != 0:
         return [_unknown("Estate audit", err.strip()[:200] or f"exit {rc}", " ".join(cmd))]
@@ -589,7 +589,8 @@ def _runners_in_git() -> Row:
     """
     state = os.path.expanduser("~/.claude/state/in-git-status.json")
     label = "Everything load-bearing is in git"
-    cmd = "~/.claude/scripts/estate/in-git.py"
+    cmd = os.path.join(os.environ.get("GUARDS_ROOT",
+             os.path.dirname(os.path.abspath(__file__))), "estate", "in-git.py")
     try:
         with open(state) as f:
             d = json.load(f)
@@ -1207,7 +1208,7 @@ def collect_founder_friction() -> list[Row]:
                 f"{len(hits)} of {said} things you said",
                 f"{len(recent)} of them in the last 6 hours" if hits
                 else "nothing in your own words reads as a complaint",
-                "python3 ~/.claude/scripts/founder_board.py --json")]
+                "python3 $HOME/Documents/code/claude-guards/founder_board.py --json")]
 
     for ts, session, text in hits[:5]:
         one = " ".join(text.split())
@@ -1844,7 +1845,7 @@ def collect_deliveries() -> list[Row]:
     except FileNotFoundError:
         return [_unknown("Delivered to you", "nothing recorded yet: no DONE: reply has linked a "
                          "deliverable since the hook landed 2026-08-25",
-                         "python3 ~/.claude/scripts/founder-deliver.py --selftest")]
+                         "python3 $HOME/Documents/code/claude-guards/founder-deliver.py --selftest")]
     except Exception as exc:  # noqa: BLE001
         return [_unknown("Delivered to you", f"{DELIVER_STATE} unreadable: {exc}")]
     items = list(reversed(data.get("deliveries") or []))
@@ -2250,7 +2251,7 @@ def _run_capped(title, fn, cap_s: float = None):
     th.join(cap)
     if th.is_alive():
         return [_unknown(title, f"collector still running after {cap:.0f}s; page built without it",
-                         "FOUNDER_BOARD_COLLECTOR_CAP_S=120 python3 ~/.claude/scripts/founder_board.py")]
+                         "FOUNDER_BOARD_COLLECTOR_CAP_S=120 python3 $HOME/Documents/code/claude-guards/founder_board.py")]
     if "err" in box:
         e = box["err"]
         return [_unknown(title, f"collector raised {type(e).__name__}: {e}")]

@@ -506,7 +506,7 @@ class Bridge:
                     if r.returncode == 0:
                         break
             except Exception:
-                try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 508))
+                try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 508))
                 except Exception: pass
         put(self.con, "last_start", str(time.time()))
         self.refresh_health()

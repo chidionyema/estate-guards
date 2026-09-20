@@ -98,7 +98,7 @@ def post(entry: dict, path: pathlib.Path = BOARD) -> None:
         with path.open("a") as fh:
             fh.write(json.dumps(entry, sort_keys=True) + "\n")
     except Exception:
-        try: (__import__("sys").path.append(__import__("os").path.expanduser("~/.claude/scripts")), __import__("guard_report").broken(__file__, 100))
+        try: (__import__("sys").path.insert(0,str(__import__("guards_root").GUARDS_ROOT)), __import__("guard_report").broken(__file__, 100))
         except Exception: pass
 
 

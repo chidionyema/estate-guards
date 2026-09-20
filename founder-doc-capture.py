@@ -18,8 +18,8 @@ WHAT THIS DOES (UserPromptSubmit, never blocks, never fails a turn):
     "File write and commit still happen; just no more per-turn additionalContext noise"); read the
     path back with --list/--grep, and the board row for the work links it.
 
-Read it back with:  python3 ~/.claude/scripts/founder-doc-capture.py --list [--grep word]
-Backfill the directives log once:  python3 ~/.claude/scripts/founder-doc-capture.py --backfill
+Read it back with:  python3 $HOME/Documents/code/claude-guards/founder-doc-capture.py --list [--grep word]
+Backfill the directives log once:  python3 $HOME/Documents/code/claude-guards/founder-doc-capture.py --backfill
 """
 
 from __future__ import annotations

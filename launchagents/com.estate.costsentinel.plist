@@ -5,7 +5,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>Label</key>
 	<string>com.estate.costsentinel</string>
@@ -13,18 +13,18 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/scripts/hc-wrap.sh</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/hc-wrap.sh</string>
 		<string>estate-costsentinel</string>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/estate_cost_sentinel.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/estate_cost_sentinel.py</string>
 		<string>--digest</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/logs/cost-sentinel.err.log</string>
+	<string>/Users/roseonyema/.estate/logs/cost-sentinel.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/logs/cost-sentinel.log</string>
+	<string>/Users/roseonyema/.estate/logs/cost-sentinel.log</string>
 	<key>StartInterval</key>
 	<integer>877</integer>
 </dict>

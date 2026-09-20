@@ -13,15 +13,15 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.prospector/bin/failover</string>
+		<string>/Users/roseonyema/.prospector/bin/failover</string>
 		<string>check</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.prospector/logs/com.prospector-control.failover-watch.log</string>
+	<string>/Users/roseonyema/.prospector/logs/com.prospector-control.failover-watch.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.prospector/logs/com.prospector-control.failover-watch.log</string>
+	<string>/Users/roseonyema/.prospector/logs/com.prospector-control.failover-watch.log</string>
 	<key>StartInterval</key>
 	<integer>60</integer>
 </dict>

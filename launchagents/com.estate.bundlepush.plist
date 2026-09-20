@@ -5,7 +5,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>Label</key>
 	<string>com.estate.bundlepush</string>
@@ -17,15 +17,15 @@
 	<string>Background</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/.claude/bin/estate-runner</string>
-		<string>/Users/chidionyema/.claude/scripts/estate/estate_bundle_push.sh</string>
+		<string>/Users/roseonyema/.estate/bin/estate-runner</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/estate/estate_bundle_push.sh</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/estate-bundlepush.err.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/estate-bundlepush.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/estate-bundlepush.out.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/estate-bundlepush.out.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

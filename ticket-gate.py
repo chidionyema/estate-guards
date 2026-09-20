@@ -701,7 +701,7 @@ def headline() -> str:
 
 
 SETTINGS = os.path.join(HOME, ".claude", "settings.json")
-HOOK_CMD = "python3 $HOME/.claude/scripts/ticket-gate.py"
+HOOK_CMD = "python3 $HOME/Documents/code/claude-guards/ticket-gate.py"
 MATCHERS = ("Edit|Write|MultiEdit|NotebookEdit", "Bash")
 
 

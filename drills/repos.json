@@ -1,7 +1,7 @@
 {
   "_": "Every repository this estate works in, and where its dependency answer key lives. A repository whose CI can run the gate says so; one whose CI cannot says why. GitHub Actions on this account will not start a job in a PRIVATE repository -- the annotation is 'The job was not started because recent account payments have failed or your spending limit needs to be increased' -- so the private repositories are audited on this machine instead, on a schedule, and the result goes to the board.",
   "repos": [
-    {"name": "claude-guards",  "root": "{HOME}/.claude/scripts",          "deps": "drills/dependencies.json", "ci": "guards.yml"},
+    {"name": "claude-guards",  "root": "{HOME}/Documents/code/claude-guards",          "deps": "drills/dependencies.json", "ci": "guards.yml"},
     {"name": "crew",           "root": "{HOME}/dev/code/crew",           "deps": ".dependencies.json",       "ci": "dependencies.yml"},
     {"name": "hermes-v2",      "root": "{HOME}/dev/code/hermes-v2",      "deps": ".dependencies.json",       "ci": "dependencies.yml"},
     {"name": "maestro",        "root": "{HOME}/dev/code/maestro",        "deps": ".dependencies.json",       "ci": "dependencies.yml"},

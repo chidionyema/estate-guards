@@ -117,7 +117,8 @@ FULL_DAYS=${ESTATE_BUNDLE_FULL_DAYS:-7}
 #: hourly ceiling would silently skip exactly the repos that matter most. R2 storage is
 #: cheap and a silent skip is not (LAW 28).
 FULL_MAX_MB=${ESTATE_BUNDLE_FULL_MAX_MB:-2048}
-DECLARED_JSON="$HOME/.claude/scripts/estate/load-bearing.json"
+GUARDS_ROOT="${GUARDS_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+DECLARED_JSON="$GUARDS_ROOT/estate/load-bearing.json"
 
 log() { printf '%s %s\n' "$(date -u +%FT%TZ)" "$*"; }
 ask_remote() {
@@ -132,7 +133,7 @@ import os, sys
 # This script's own directory first. ~/.hermes is retired and is a symlink into
 # ~/Documents, which macOS TCC hides from a bootstrapped LaunchAgent; putting it at
 # sys.path[0] is what made estate_cost_sentinel import the dead tree's copy.
-sys.path.insert(0, os.path.expanduser("~/.claude/scripts/estate"))
+sys.path.insert(0, os.path.join(os.environ.get("GUARDS_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "estate"))
 try:
     import estate_alert
 except Exception as exc:

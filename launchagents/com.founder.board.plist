@@ -11,16 +11,16 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/founder_board.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/founder_board.py</string>
 		<string>--html</string>
-		<string>/Users/chidionyema/.claude/state/founder-board.html</string>
+		<string>/Users/roseonyema/.estate/state/founder-board.html</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/founder-board.err</string>
+	<string>/Users/roseonyema/.estate/state/logs/founder-board.err</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/founder-board.out</string>
+	<string>/Users/roseonyema/.estate/state/logs/founder-board.out</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
@@ -97,6 +97,6 @@
 		</dict>
 	</array>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema</string>
+	<string>/Users/roseonyema</string>
 </dict>
 </plist>

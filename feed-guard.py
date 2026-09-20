@@ -25,6 +25,15 @@ import sys
 import tempfile
 from pathlib import Path
 
+#: The command a session must paste back into its own shell, pointed at wherever this guard
+#: actually lives. Resolved from __file__ so it is right on any machine, clone or user -- a
+#: hardcoded ~/.claude/scripts died with the .claude rename, and a hardcoded home directory
+#: dies on the next machine (AGENTS.md 0.3).
+SELF = os.path.join(
+    os.environ.get("GUARDS_ROOT")
+    or os.path.dirname(os.path.abspath(__file__)),
+    "feed-guard.py")
+
 from feed_meter import METER_MARK, meter_line  # crew#26 CP-D: a library, not a guard
 from feed_publish import (  # noqa: F401  crew#786: the publisher is a library, not a guard
     IDP_REPO,
@@ -200,7 +209,7 @@ def append(
         if feed.stat().st_size == 0:
             fh.write(
                 "# Estate feed\n\nOne handoff per session per 15 minutes (R33). Newest at the bottom. "
-                "Written by `python3 ~/.claude/scripts/feed-guard.py append`; read with `status`.\n\n"
+                f"Written by `python3 {SELF} append`; read with `status`.\n\n"
             )
         fh.write(
             f"## {at.strftime('%Y-%m-%dT%H:%M:%SZ')} · session {session} · lane {lane}\n"
@@ -271,7 +280,7 @@ def block_text(session: str, lane: str, age: int) -> str:
     return (
         f"FEED GUARD (R33): this session {why}; the limit is 15 minutes. Append the handoff now, "
         f"then end the turn:\n"
-        f"python3 ~/.claude/scripts/feed-guard.py append --session {session} --lane {lane} <<'EOF'\n"
+        f"python3 {SELF} append --session {session} --lane {lane} <<'EOF'\n"
         f"🔴 Blocked: <what, who unblocks>\n🟡 Active: <issue numbers>\n🟢 Done: <merged, with sha>\n"
         f"⚪ Pending: <founder pick>\n🔧 TOUCHES: <files, services, ports, secrets you will change in 2h, or none>\n"
         f"🔀 OVERLAP: <issue numbers another session also touches, or none>\n📎 FACTS: <URL of the ticket's Infra facts block, from bin/idp-ticket-facts, or none>\n📍 State: <file or URL>\nEOF\n"
@@ -409,7 +418,7 @@ def hook(kind: str) -> int:
                 f"do not re-measure what they answer.\n{body}"
             )
         print(
-            f"[feed] You write a 6-line handoff here every 15 minutes: python3 ~/.claude/scripts/feed-guard.py append --session {session} --lane {lane}"
+            f"[feed] You write a 6-line handoff here every 15 minutes: python3 {SELF} append --session {session} --lane {lane}"
         )
         return 0
     age = overdue(FEED, session)
@@ -422,7 +431,7 @@ def hook(kind: str) -> int:
         return 0
     print(
         f"[feed] handoff overdue ({'none yet' if age < 0 else f'{age // 60} min'}); append one before this turn ends: "
-        f"python3 ~/.claude/scripts/feed-guard.py append --session {session} --lane {lane}"
+        f"python3 {SELF} append --session {session} --lane {lane}"
     )
     return 0
 

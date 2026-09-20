@@ -5,7 +5,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
 	</dict>
 	<key>Label</key>
 	<string>ai.estate.drills</string>
@@ -16,13 +16,13 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/drills/run.py</string>
+		<string>/Users/roseonyema/Documents/code/claude-guards/drills/run.py</string>
 		<string>--all</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/logs/drills.log</string>
+	<string>/Users/roseonyema/.estate/logs/drills.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/logs/drills.log</string>
+	<string>/Users/roseonyema/.estate/logs/drills.log</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
@@ -31,6 +31,6 @@
 		<integer>30</integer>
 	</dict>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/.claude/scripts</string>
+	<string>/Users/roseonyema/Documents/code/claude-guards</string>
 </dict>
 </plist>

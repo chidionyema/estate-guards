@@ -118,7 +118,7 @@ def run(dry: bool = False) -> int:
 
     if payload is None:
         _send(f"🚨 ESTATE SCANNER SILENT\nNo audit at {AUDIT}.\n"
-              f"Rebuild: python3 ~/.claude/scripts/estate_audit.py --html --state",
+              f"Rebuild: python3 $HOME/Documents/code/claude-guards/estate_audit.py --html --state",
               "estate-watch-missing", dry)
         print("no audit on disk")
         return 1
