@@ -75,7 +75,7 @@ pycparser==3.0
 pydantic==2.13.4
 pydantic-core==2.46.4
 pygments==2.21.0
-pypdf==6.16.1
+pypdf==6.19.0
 pyphen==0.18.1
 pytest==9.1.1
 pytest-cov==7.1.0
