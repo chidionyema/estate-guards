@@ -74,7 +74,7 @@ tornado==6.5.8
 tqdm==4.70.0
 typing-extensions==4.16.0
 typing-inspection==0.4.2
-urllib3==2.7.0
+urllib3==2.8.0
 uvicorn==0.52.1
 uvloop==0.22.1
 watchfiles==1.2.0
