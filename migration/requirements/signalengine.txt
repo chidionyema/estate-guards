@@ -56,7 +56,7 @@ pandas==3.0.3
 pathspec==1.1.1
 patsy==1.0.2
 peewee==4.0.8
-pillow==12.3.0
+pillow==13.0.0
 platformdirs==4.10.0
 plotly==6.8.0
 pluggy==1.6.0
