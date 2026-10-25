@@ -227,6 +227,10 @@
       "is": "the path of the same recovery key at ~/.config/estate, the copy a scheduled job can read",
       "covered_by": "key-escrow-restore"
     },
+    "LITELLM_API_KEY": {
+      "is": "the laptop's one router virtual key, minted by idp vault-seed entry=laptop, delivered by estate-secrets (crew#568)",
+      "dismissed": "losing it costs the keyed lanes only; consultd falls to ollama, bin/consult exits 3; re-minted by one workflow dispatch, never pasted"
+    },
     "MINIMAX_API_KEY": {
       "is": "spare rail",
       "dismissed": "same"
