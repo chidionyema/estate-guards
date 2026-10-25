@@ -20,3 +20,9 @@ decisions.json
 
 # k3d writes its own cluster certs and kubeconfig here; regenerated per machine, never committed
 config/k3d/
+
+# Runtime secrets never enter this tree. The vault (estate-secrets) holds the
+# values and secret-load resolves them by name; a value committed here is a
+# value in every clone and every fork. This path held a retired Minimax key
+# until 2026-10-25 and is now ignored so it cannot come back.
+config/prospector/secrets.d/

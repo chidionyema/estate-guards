@@ -67,7 +67,15 @@ TRUNK = {"main", "master"}
 #: LAW 22's escape hatch, same shape as LAW 7's.
 EVIDENCE_OK = re.compile(r"(?im)^\s*No-Evidence:\s*\S")
 #: The tool that already knows what evidence looks like. Do not reimplement it.
-PR_EVIDENCE = os.path.expanduser("~/.claude/scripts/pr-evidence.py")
+#: The tool lives in this repository's root. The path used to be an absolute
+#: one (~/.claude/scripts, then ~/Documents/code/claude-estate/scripts) and both
+#: went stale when the repository moved, so the import failed, the import was
+#: swallowed, and LAW 21 and LAW 22 ran open on every push: a credential in a
+#: public tree passed because the scanner that would have found it was not
+#: there. Relative to the hook, the scanner and the evidence tool are always
+#: where they were committed.
+REPO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir)
+PR_EVIDENCE = os.path.join(REPO_ROOT, "pr-evidence.py")
 
 
 def git(*args):
@@ -281,7 +289,7 @@ def evidence(local_ref, shas):
 
 #: The scanner. Written once, in one place, so pre-push and the scheduled sweep
 #: over the public repositories cannot drift apart on what a credential is.
-sys.path.insert(0, os.path.expanduser("~/.claude/scripts"))
+sys.path.insert(0, REPO_ROOT)
 try:
     import repo_secrets
 except Exception:                      # a missing scanner must not wedge every push
