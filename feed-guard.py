@@ -33,6 +33,12 @@ import sys
 import tempfile
 from pathlib import Path
 
+# The path this guard tells agents to run is the path it actually lives at. It used to be
+# the literal "~/.claude/scripts/<name>" -- a directory that does not exist on this machine,
+# so every session was instructed, on every turn, to run a script that was not there
+# (measured 2026-09-21, session c759de1f). A message that names a path must DERIVE it.
+SELF_CMD = os.path.abspath(__file__)
+
 FEED = Path(os.environ.get("ESTATE_FEED") or os.path.expanduser("~/.estate/feed.md"))
 INTERVAL_S = 30 * 60
 MARKS = ("🔴", "🟡", "🟢", "⚪", "📍")
@@ -85,7 +91,7 @@ def append(feed: Path, session: str, lane: str, body: str, at: dt.datetime | Non
     with feed.open("a", encoding="utf-8") as fh:
         if feed.stat().st_size == 0:
             fh.write("# Estate feed\n\nOne handoff per session per 30 minutes (R33). Newest at the bottom. "
-                     "Written by `python3 ~/.claude/scripts/feed-guard.py append`; read with `status`.\n\n")
+                     "Written by `python3 " + SELF_CMD + f" append`; read with `status`.\n\n")
         fh.write(f"## {at.strftime('%Y-%m-%dT%H:%M:%SZ')} · session {session} · lane {lane}\n" + "\n".join(lines) + "\n\n")
     return None
 
@@ -94,7 +100,7 @@ def block_text(session: str, lane: str, age: int) -> str:
     why = "has no entry in the feed" if age < 0 else f"last wrote to the feed {age // 60} min ago"
     return (f"FEED GUARD (R33): this session {why}; the limit is 30 minutes. Append the handoff now, "
             f"then end the turn:\n"
-            f"python3 ~/.claude/scripts/feed-guard.py append --session {session} --lane {lane} <<'EOF'\n"
+            f"python3 " + SELF_CMD + f" append --session {session} --lane {lane} <<'EOF'\n"
             f"🔴 Blocked: <what, who unblocks>\n🟡 Active: <issue numbers>\n🟢 Done: <merged, with sha>\n"
             f"⚪ Pending: <founder pick>\n📍 State: <file or URL with the full picture>\nEOF\n"
             f"Six lines at most, each starting with 🔴 🟡 🟢 ⚪ or 📍. Drop lines that are empty.")
@@ -113,7 +119,7 @@ def hook(kind: str) -> int:
             body = "\n".join(f"## {e[0].strftime('%Y-%m-%dT%H:%MZ')} · {e[1]} · {e[2]}\n" + "\n".join(e[3]) for e in tail)
             print(f"[feed] LAST {len(tail)} HANDOFFS FROM {FEED} (R33). When the founder says 'Status', summarise these; "
                   f"do not re-measure what they answer.\n{body}")
-        print(f"[feed] You write a 6-line handoff here every 30 minutes: python3 ~/.claude/scripts/feed-guard.py append --session {session} --lane {lane}")
+        print(f"[feed] You write a 6-line handoff here every 30 minutes: python3 " + SELF_CMD + f" append --session {session} --lane {lane}")
         return 0
     age = overdue(FEED, session)
     if age is None:
@@ -124,7 +130,7 @@ def hook(kind: str) -> int:
         print(json.dumps({"decision": "block", "reason": block_text(session, lane, age)}))
         return 0
     print(f"[feed] handoff overdue ({'none yet' if age < 0 else f'{age // 60} min'}); append one before this turn ends: "
-          f"python3 ~/.claude/scripts/feed-guard.py append --session {session} --lane {lane}")
+          f"python3 " + SELF_CMD + f" append --session {session} --lane {lane}")
     return 0
 
 

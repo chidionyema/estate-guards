@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>ESTATE_MEMORY_TOKEN_FILE</key>
+		<string>/Users/roseonyema/.estate/unified-memory/surface-token</string>
+		<key>ESTATE_MEMORY_URL</key>
+		<string>http://127.0.0.1:18000</string>
+		<key>ESTATE_TOKEN_PROOF</key>
+		<string>/nonexistent/estate-token-proof-disabled-2026-10-21</string>
+		<key>ESTATE_ZONE</key>
+		<string>mumchimp.com</string>
+		<key>HOME</key>
+		<string>/Users/roseonyema</string>
+		<key>LITELLM_HOST</key>
+		<string>http://127.0.0.1:4000</string>
+		<key>NATS_URL</key>
+		<string>nats://127.0.0.1:4222</string>
+		<key>VOICE_ROUTER_MODEL</key>
+		<string>voice</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>ai.estate.fleetview-backend</string>
+	<key>ProcessType</key>
+	<string>Interactive</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Frameworks/Python.framework/Versions/3.12/bin/python3</string>
+		<string>/Users/roseonyema/.estate/runtime/idp/bin/fleetview-launchd</string>
+		<string>18790</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/roseonyema/.estate/fleetview-backend.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/roseonyema/.estate/fleetview-backend.out.log</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/roseonyema/.estate/runtime/idp</string>
+</dict>
+</plist>

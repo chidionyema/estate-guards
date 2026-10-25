@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/Users/roseonyema/.rd/bin:/Users/roseonyema/.local/bin:/usr/local/bin:/Users/roseonyema/.opencode/bin:/Users/roseonyema/.estate/bin:/Users/roseonyema/.rd/bin:/Users/roseonyema/.opencode/bin:/Users/roseonyema/.nvm/versions/node/v22.15.1/bin:/Users/roseonyema/.cargo/bin:/Users/roseonyema/.local/bin:/Users/roseonyema/.cache/estate-tools:/Users/roseonyema/Documents/code/idp/bin:/Users/roseonyema/.cache/estate-tools:/Users/roseonyema/Documents/code/idp/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/roseonyema/.claude/plugins/cache/claude-plugins-official/mattpocock-skills/1.2.3/bin</string>
+	</dict>
+	<key>Label</key>
+	<string>ai.estate.router-doctor</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/roseonyema/.estate/bin/load-gate-and-run</string>
+		<string>/Users/roseonyema/.local/bin/python3.12</string>
+		<string>/Users/roseonyema/.estate/libexec/router-doctor.py</string>
+		<string>watch</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/roseonyema/.estate/router-doctor.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/roseonyema/.estate/router-doctor.out.log</string>
+	<key>StartInterval</key>
+	<integer>120</integer>
+</dict>
+</plist>

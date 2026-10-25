@@ -8,16 +8,16 @@
 	<integer>15</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/dev/code/agent-guard/bin/launchd-lint</string>
+		<string>/Library/Frameworks/Python.framework/Versions/3.12/bin/python3</string>
+		<string>/Users/roseonyema/Documents/code/agent-guard/bin/launchd-lint</string>
 		<string>--broadcast-on-red</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/dev/code/agent-guard/logs/lint.log</string>
+	<string>/Users/roseonyema/.estate/logs/agent-guard-lint.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/dev/code/agent-guard/logs/lint.log</string>
+	<string>/Users/roseonyema/.estate/logs/agent-guard-lint.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

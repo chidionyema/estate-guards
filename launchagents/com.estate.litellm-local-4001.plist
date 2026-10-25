@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.estate.litellm-local-4001</string>
+  <key>ProgramArguments</key>
+  <array><string>/bin/bash</string><string>/Users/roseonyema/.estate/litellm-local/litellm-local</string><string>run</string></array>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ExitTimeOut</key><integer>600</integer>
+  <key>StandardOutPath</key><string>/Users/roseonyema/Library/Logs/litellm-local.log</string>
+  <key>StandardErrorPath</key><string>/Users/roseonyema/Library/Logs/litellm-local.log</string>
+  <key>EnvironmentVariables</key><dict><key>PATH</key><string>/usr/bin:/bin:/usr/sbin:/sbin</string><key>LITELLM_LOCAL_PORT</key><string>4001</string></dict>
+</dict>
+</plist>

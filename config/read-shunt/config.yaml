@@ -1,0 +1,13 @@
+# read-shunt — neutral config. Env vars override (READ_SHUNT_LINES, READ_SHUNT_MODEL, ...).
+# The worker roster is NOT here: it is read from idp/llm/config.yaml, so adding a provider
+# is a LiteLLM change, never a read-shunt change.
+
+enabled: true
+threshold_lines: 350        # reads over this many lines are offloaded
+max_chars: 400000           # ceiling on how much file is sent to the worker
+timeout_seconds: 60
+max_tokens: 1500
+worker_model: ""            # empty = first alias in idp/llm/config.yaml
+worker_fallbacks: ""        # empty = the idp roster, in file order
+router_base_url: ""         # empty = $LITELLM_BASE_URL or https://llm.$ESTATE_ZONE/v1
+ledger_path: ~/.read-shunt/ledger.jsonl

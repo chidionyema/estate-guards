@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  mac-door — launchd job for the door otto uses to run commands on the founder's Mac.
+
+  REVOKE (any one of these closes it):
+    launchctl bootout gui/501/com.estate.mac-door          # this process, locally, instant
+    launchctl print gui/501/com.estate.mac-door             # check it is gone
+  ...or revoke the token in the vault, ...or delete the tailnet ACL rule.
+  All three are documented at the top of ~/.estate/bin/mac-door.
+
+  The token is NOT in this file (AGENTS.md section 4). mac-door reads MAC_DOOR_TOKEN from the
+  vault through estate-secrets/scripts/secret-load at startup. If the vault is unreachable the
+  process still starts and every /run answers 401 -- a closed door, not an open one.
+
+  KeepAlive with a SuccessfulExit=false throtte: restart on crash, but do not spin.
+  StandardOut/Error go to a log the founder can read.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.estate.mac-door</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/roseonyema/.estate/bin/mac-door</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>MAC_DOOR_PORT</key>
+        <string>8770</string>
+        <key>PATH</key>
+        <string>/Users/roseonyema/.cache/estate-tools:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+
+    <key>StandardOutPath</key>
+    <string>/Users/roseonyema/.estate/mac-door.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/roseonyema/.estate/mac-door.log</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/roseonyema</string>
+</dict>
+</plist>

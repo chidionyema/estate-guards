@@ -25,6 +25,7 @@ checkpoints/LATEST.md into the next fresh session automatically.
 Per-session state lives next to the transcript: <session>.jsonl.guard.json
 Cost when it fires: ~70 tokens of injected context. Silent otherwise. Never blocks.
 """
+from __future__ import annotations
 import json, os, re, sys, time
 
 #: Above this, the PreToolUse half refuses ONE context-growing call per session. Same

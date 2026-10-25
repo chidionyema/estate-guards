@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- The Backstage backend on :7107 (the app's API and proxy), served from ~/.estate/frontend/idp
+     (kept on origin/main by ai.estate.runtime-sync), never from a checkout. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>ai.estate.backstage-backend</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Library/Frameworks/Python.framework/Versions/3.12/bin/python3</string>
+    <string>/Users/roseonyema/.estate/bin/fleetview-frontend-launchd</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key><string>/Users/roseonyema</string>
+    <key>PATH</key><string>/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>FLEET_FRONTEND_WORKSPACE</key><string>backend</string>
+    <key>FLEET_FRONTEND_PORT</key><string>7107</string>
+  </dict>
+  <key>ProcessType</key><string>Interactive</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>30</integer>
+  <key>StandardOutPath</key><string>/Users/roseonyema/Library/Logs/backstage-backend.log</string>
+  <key>StandardErrorPath</key><string>/Users/roseonyema/Library/Logs/backstage-backend.log</string>
+</dict>
+</plist>

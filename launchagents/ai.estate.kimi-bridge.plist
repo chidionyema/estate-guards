@@ -2,40 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key><string>ai.estate.kimi-bridge</string>
-  <!-- The venv interpreter on purpose: Playwright has no wheel for the system
-       python, so the bridge cannot run under /usr/bin/python3 the way consultd
-       does. The venv python is ad-hoc signed by scripts/sign-interpreters.sh,
-       which stops the "Python wants to access data from other apps" re-prompt
-       that unsigned Homebrew/uv interpreters trigger under launchd. -->
-  <key>ProgramArguments</key>
-  <array>
-    <string>/Users/chidionyema/.kimi-bridge/venv/bin/python</string>
-    <string>/Users/chidionyema/.claude/scripts/kimi_bridge.py</string>
-    <string>--daemon</string>
-  </array>
-  <key>EnvironmentVariables</key>
-  <dict>
-    <key>PATH</key>
-    <string>/Users/chidionyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-    <!-- Headless: the daemon's browser must never appear on screen by itself.
-         The login flag is the one time a window is wanted, and that path sets
-         this to false for its own run.
-
-         No double hyphen anywhere in this comment: XML forbids it inside a
-         comment, plutil tolerates it and launchd loads the job fine, so the
-         file reads as healthy while every Python tool that opens it throws
-         ExpatError and skips the job in silence. -->
-    <key>KIMI_BRIDGE_HEADLESS</key><string>true</string>
-  </dict>
-  <key>RunAtLoad</key><true/>
-  <!-- Self-heals: if the daemon dies, launchd restarts it, and the session on
-       disk signs the fresh browser straight back in. The founder signs in once,
-       ever; the machine owns it after that (LAW 27). -->
-  <key>KeepAlive</key><true/>
-  <key>ThrottleInterval</key><integer>10</integer>
-  <key>StandardOutPath</key><string>/Users/chidionyema/.kimi-bridge/logs/daemon.log</string>
-  <key>StandardErrorPath</key><string>/Users/chidionyema/.kimi-bridge/logs/daemon.log</string>
-  <key>WorkingDirectory</key><string>/Users/chidionyema/.kimi-bridge</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>KIMI_BRIDGE_HEADLESS</key>
+		<string>true</string>
+		<key>PATH</key>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>ai.estate.kimi-bridge</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Frameworks/Python.framework/Versions/3.12/bin/python3</string>
+		<string>/Users/roseonyema/Documents/code/estate-core/scripts/kimi_bridge.py</string>
+		<string>--daemon</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/roseonyema/.kimi-bridge/logs/daemon.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/roseonyema/.kimi-bridge/logs/daemon.log</string>
+	<key>ThrottleInterval</key>
+	<integer>10</integer>
+	<key>WorkingDirectory</key>
+	<string>/Users/roseonyema/.kimi-bridge</string>
 </dict>
 </plist>

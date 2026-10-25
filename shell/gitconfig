@@ -1,26 +1,9 @@
 [user]
-	email = 377396+chidionyema@users.noreply.github.com
 	name = chidionyema
-	signingkey = /Users/chidionyema/.ssh/id_ed25519_signing.pub
+	email = chidionyema@gmail.com
 [http]
 	postBuffer = 524288000
-	lowSpeedLimit = 0
-	lowSpeedTime = 999999
-	maxRequestBuffer = 100M
-[credential]
-	helper = !gh auth git-credential
-[pull]
-	rebase = false
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[push]
-	default = simple
-[gpg]
-	format = ssh
-[commit]
-	gpgsign = true
-[core]
-	hooksPath = /Users/chidionyema/.estate/guards/hooks
+[fetch]
+	prune = true
+[alias]
+	sweep = !~/bin/git-sweep

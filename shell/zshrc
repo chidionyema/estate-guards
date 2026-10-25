@@ -1,74 +1,53 @@
-
-
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/chidionyema/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/chidionyema/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/chidionyema/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/chidionyema/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-alias bfg="java -jar /usr/local/bin/bfg.jar"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-export PATH="/usr/local/opt/node@20/bin:$PATH"
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Load nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Load bash_completion
-
-
-export PATH=/usr/local/bin:$PATH
-alias claude-code="npx @anthropic-ai/claude-code"
-ulimit -n 65536
-ulimit -n 2147483646
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 . "$HOME/.local/bin/env"
+export SOPS_AGE_KEY_FILE="$HOME/.config/prospector/age-key.txt"
+_estate_secrets=~/Documents/code/estate-secrets
+if [ -d "$_estate_secrets/secrets/dev" ]; then
+  export LITELLM_API_KEY=$("$_estate_secrets/scripts/secret-load" dev LITELLM_LAPTOP_KEY LITELLM_API_KEY 2>/dev/null) 2>/dev/null || true
+fi
+unset _estate_secrets
 
-# wave-router API keys
-[ -f ~/.config/wave/secrets.sh ] && . ~/.config/wave/secrets.sh
+# Claude Code routing (2026-09-26). Every Claude Code process goes through the LOCAL router
+# ~/.claude/settings.json -- not here, so the desktop app, IDE and subprocesses are covered too.
+# No direct fallback and no CLAUDE_DIRECT: founder, 2026-09-26, "no skipping the router
+# Rollback: restore ~/.claude/settings.json.bak-20260926-router.
+unset ANTHROPIC_CUSTOM_HEADERS MAX_THINKING_TOKENS CLAUDE_DIRECT
+export ENABLE_TOOL_SEARCH=true
 
-# the-introduction-exchange test secrets (Stripe test-mode key, etc.)
-[ -f ~/.config/tie/secrets.sh ] && . ~/.config/tie/secrets.sh
+# Bounded retries for Claude Code (prevents 10x token burn on 429)
+export CLAUDE_CODE_MAX_RETRIES=2
 
+export PATH="$HOME/.cache/estate-tools:$PATH"
+source ~/.nvm/nvm.sh
+source ~/.nvm/nvm.sh
 
-# Added by Antigravity CLI installer
-export PATH="/Users/chidionyema/.local/bin:$PATH"
-
-# LLM provider API keys (consolidated 2026-06-15) — single source of truth for
-# prospector, graphify, gemini CLI, mmx, aider, etc. Edit ~/.config/llm/secrets.sh.
-[ -f ~/.config/llm/secrets.sh ] && . ~/.config/llm/secrets.sh
-
-# agy — skip Bash permission prompts
-alias agy='agy --dangerously-skip-permissions'
-
-# kimi-code
-export PATH="/Users/chidionyema/.kimi-code/bin:$PATH"
-
-# xAI / Grok API key
-
-# Groq API key (used by pi-agent groq provider)
-export GROQ_API_KEY=$(cat ~/.pi/agent/.groq_key)
-
-# Standard Compute API key (used by pi-agent standard-compute provider)
-export STANDARD_COMPUTE_API_KEY=$(cat ~/.pi/agent/.stdcompute_key)
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/roseonyema/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+eval "$(/usr/local/bin/brew shellenv)"
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 
-# Let a pasted block keep its comments. Without this, zsh reads a leading # as a
-# glob and answers "zsh: bad pattern: #", so every commented command block pasted
-# into this shell errors on its first line. bash has this on by default.
-setopt interactivecomments
+
+
+# claude-raw -- break-glass. Explicit real Anthropic, overrides settings.json.
+
+estate-status() {
+  if curl -sf -m 2 http://127.0.0.1:4000/health/liveliness >/dev/null 2>&1; then
+    echo "router UP   -> claude"
+  else
+    echo "router DOWN -> claude-raw"
+  fi
+}
+export DISABLE_AUTOUPDATER=1
+
+# Founder 2026-09-30: no .claude folders; the harness runs from the estate.
+export CLAUDE_CONFIG_DIR="$HOME/.estate/harness/cc"
+[ -f "/Users/roseonyema/.estate/env/harness.sh" ] && . "/Users/roseonyema/.estate/env/harness.sh"  # estate: harness config, no harness folders
+export ESTATE_AGENT="${ESTATE_AGENT:-estate-agent}"  # claim #6228: every harness stamps its memories

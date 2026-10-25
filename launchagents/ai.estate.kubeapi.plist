@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>IDP_KUBECONFIG</key>
+		<string>/Users/roseonyema/.local/state/idp/kubeconfig-apikey</string>
+		<key>PATH</key>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>ai.estate.kubeapi</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/roseonyema/.estate/runtime/idp/bin/idp-kubeapi-mac</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/roseonyema/.estate/runtime/idp/run/kubeapi-launchd.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/roseonyema/.estate/runtime/idp/run/kubeapi-launchd.log</string>
+	<key>ThrottleInterval</key>
+	<integer>30</integer>
+	<key>WorkingDirectory</key>
+	<string>/Users/roseonyema/.estate/runtime/idp</string>
+</dict>
+</plist>

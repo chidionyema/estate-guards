@@ -8,16 +8,16 @@
 	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/python3</string>
-		<string>/Users/chidionyema/.claude/scripts/config-syntax-sweep.py</string>
+		<string>/Library/Frameworks/Python.framework/Versions/3.12/bin/python3</string>
+		<string>/Users/roseonyema/Documents/code/estate-core/scripts/config-syntax-sweep.py</string>
 		<string>--broadcast-on-red</string>
 	</array>
 	<key>RunAtLoad</key>
 	<false/>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/config-syntax-sweep.err.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/config-syntax-sweep.err.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/.claude/state/logs/config-syntax-sweep.out.log</string>
+	<string>/Users/roseonyema/.estate/state/logs/config-syntax-sweep.out.log</string>
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>

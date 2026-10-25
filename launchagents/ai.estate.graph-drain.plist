@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>ai.estate.graph-drain</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/roseonyema/.estate/bin/load-gate-and-run</string>
+		<string>/Users/roseonyema/.estate/bin/estate-graph-drain</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/roseonyema/.estate/graph-drain.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/roseonyema/.estate/graph-drain.out.log</string>
+	<key>StartInterval</key>
+	<integer>600</integer>
+</dict>
+</plist>

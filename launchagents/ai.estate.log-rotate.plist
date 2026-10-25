@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Migration P0.T4 (2026-10-24): daily estate log rotation, load-gated. Rotator:
+     ~/.estate/libexec/log-rotate.sh — copy+truncate, keep 5, gzip. -->
+<plist version="1.0"><dict>
+  <key>Label</key><string>ai.estate.log-rotate</string>
+  <key>ProgramArguments</key><array>
+    <string>/Users/roseonyema/.estate/bin/load-gate-and-run</string>
+    <string>/bin/bash</string>
+    <string>/Users/roseonyema/.estate/libexec/log-rotate.sh</string>
+  </array>
+  <key>StartCalendarInterval</key><dict><key>Hour</key><integer>4</integer><key>Minute</key><integer>20</integer></dict>
+  <key>StandardErrorPath</key><string>/Users/roseonyema/.estate/logs/log-rotate.err.log</string>
+</dict></plist>

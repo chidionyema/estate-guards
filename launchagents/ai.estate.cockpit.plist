@@ -14,17 +14,17 @@
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/Users/chidionyema/.kimi-code/bin:/Users/chidionyema/.local/bin:/Users/chidionyema/.local/bin:/usr/local/bin:/usr/local/opt/node@20/bin:/Users/chidionyema/anaconda3/bin:/Users/chidionyema/anaconda3/condabin:/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/chidionyema/.cargo/bin:/Users/chidionyema/.rvm/bin:/Users/chidionyema/.claude/plugins/cache/claude-plugins-official/mattpocock-skills/1.2.3/bin</string>
+		<string>/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/Users/roseonyema/.rd/bin:/Users/roseonyema/.local/bin:/usr/local/bin:/Users/roseonyema/.opencode/bin:/Users/roseonyema/.estate/bin:/Users/roseonyema/.rd/bin:/Users/roseonyema/.opencode/bin:/Users/roseonyema/.nvm/versions/node/v22.15.1/bin:/Users/roseonyema/.cargo/bin:/Users/roseonyema/.local/bin:/Users/roseonyema/.cache/estate-tools:/Users/roseonyema/Documents/code/idp/bin:/Users/roseonyema/.cache/estate-tools:/Users/roseonyema/Documents/code/idp/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin</string>
 		<key>HOME</key>
-		<string>/Users/chidionyema</string>
+		<string>/Users/roseonyema</string>
 	</dict>
 	<key>Label</key>
 	<string>ai.estate.cockpit</string>
 	<key>Nice</key>
-	<integer>5</integer>
+	<integer>10</integer>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/chidionyema/dev/code/idp/bin/sb</string>
+		<string>/Users/roseonyema/.estate/runtime/idp/bin/sb</string>
 		<string>cockpit</string>
 	</array>
 	<key>RunAtLoad</key>
@@ -35,10 +35,10 @@
 		<false/>
 	</dict>
 	<key>StandardErrorPath</key>
-	<string>/Users/chidionyema/dev/code/idp/run/cockpit-launchd.log</string>
+	<string>/Users/roseonyema/.estate/runtime/idp/run/cockpit-launchd.log</string>
 	<key>StandardOutPath</key>
-	<string>/Users/chidionyema/dev/code/idp/run/cockpit-launchd.log</string>
+	<string>/Users/roseonyema/.estate/runtime/idp/run/cockpit-launchd.log</string>
 	<key>WorkingDirectory</key>
-	<string>/Users/chidionyema/dev/code/idp</string>
+	<string>/Users/roseonyema/.estate/runtime/idp</string>
 </dict>
 </plist>

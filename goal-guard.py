@@ -47,6 +47,12 @@ import sys
 import time
 from pathlib import Path
 
+# The path this guard tells agents to run is the path it actually lives at. It used to be
+# the literal "~/.claude/scripts/<name>" -- a directory that does not exist on this machine,
+# so every session was instructed, on every turn, to run a script that was not there
+# (measured 2026-09-21, session c759de1f). A message that names a path must DERIVE it.
+SELF_CMD = os.path.abspath(__file__)
+
 HOME = Path.home()
 LANES_FILE = HOME / ".claude" / "lanes.json"
 STATE_DIR = HOME / ".claude" / "state" / "goal"
@@ -341,7 +347,7 @@ def gate_check(lane: dict, st: dict, payload: dict, kind: str) -> tuple[str, str
         return (mode,
                 "this session has no ACTIVE goal on disk, so this state-changing call "
                 "cannot be serving one. Declare it first, naming its crew#133 board item:\n"
-                "  python3 ~/.claude/scripts/goal-guard.py --set-goal "
+                "  python3 " + SELF_CMD + f" --set-goal "
                 "'<board item + objective with a number in it>'\n"
                 "Off-goal work is a one-line crew ticket, not this session's time.")
     scope = st.get("scope") or []
@@ -481,7 +487,7 @@ def inject(payload: dict) -> int:
     elif lane.get("goal_required"):
         parts.append(f"[goal-guard/{lane_name}] This lane requires a goal on disk and there "
                      f"is none. Write it before the next tool call:\n"
-                     f"  python3 ~/.claude/scripts/goal-guard.py --set-goal '<the objective, "
+                     f"  python3 " + SELF_CMD + f" --set-goal '<the objective, "
                      f"with a number in it>'")
     # The net, when there is one. A compaction takes the goal graph out of the window the
     # same way it takes the goal sentence, and the parked stack is the part that matters
@@ -524,7 +530,7 @@ def anchor(payload: dict) -> int:
     elif lane.get("goal_required") or str(lane.get("gate")) in ("report", "deny"):
         ctx = (f"[goal-guard/{lane_name}] No ACTIVE goal on disk -- state-changing tool "
                f"calls will be {'DENIED' if lane.get('gate') == 'deny' else 'flagged'} "
-               f"until one is set: python3 ~/.claude/scripts/goal-guard.py --set-goal "
+               f"until one is set: python3 " + SELF_CMD + f" --set-goal "
                f"'<board item + objective>'")
     else:
         return 0

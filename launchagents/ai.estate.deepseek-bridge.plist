@@ -2,39 +2,50 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key><string>ai.estate.deepseek-bridge</string>
-  <!-- Same engine as the Kimi bridge (kimi_bridge.py), second instance. The
-       BRIDGE_* env points it at DeepSeek: its own profile, port and target.
-       The venv python is the one Playwright is installed in and is ad-hoc
-       signed (scripts/sign-interpreters.sh) to stop the TCC re-prompt. -->
-  <key>ProgramArguments</key>
-  <array>
-    <string>/Users/chidionyema/.kimi-bridge/venv/bin/python</string>
-    <string>/Users/chidionyema/.claude/scripts/kimi_bridge.py</string>
-    <string>--daemon</string>
-  </array>
-  <key>EnvironmentVariables</key>
-  <dict>
-    <key>PATH</key>
-    <string>/Users/chidionyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-    <key>BRIDGE_HOME</key><string>/Users/chidionyema/.deepseek-bridge</string>
-    <key>BRIDGE_PORT</key><string>8767</string>
-    <key>BRIDGE_URL</key><string>https://chat.deepseek.com/</string>
-    <key>BRIDGE_HEADLESS</key><string>true</string>
-    <!-- DeepSeek's signed-IN page still contains the words "sign in", so the
-         generic veto is turned off and a positive signed-in marker is used. -->
-    <key>BRIDGE_SIGNIN_MARKERS</key><string></string>
-    <key>BRIDGE_READY_MARKERS</key><string>new chat,deepthink</string>
-    <key>BRIDGE_FRESH_CHAT</key><string>false</string>
-    <key>BRIDGE_INIT_JS</key><string>try{localStorage.setItem('searchEnabled', JSON.stringify({value:false,__version:"0"}));}catch(e){}</string>
-    <key>BRIDGE_SEARCH_OFF</key><string>true</string>
-    <key>BRIDGE_CAPTURE_URL</key><string>chat/completion</string>
-  </dict>
-  <key>RunAtLoad</key><true/>
-  <key>KeepAlive</key><true/>
-  <key>ThrottleInterval</key><integer>10</integer>
-  <key>StandardOutPath</key><string>/Users/chidionyema/.deepseek-bridge/logs/daemon.log</string>
-  <key>StandardErrorPath</key><string>/Users/chidionyema/.deepseek-bridge/logs/daemon.log</string>
-  <key>WorkingDirectory</key><string>/Users/chidionyema/.deepseek-bridge</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>BRIDGE_CAPTURE_URL</key>
+		<string>chat/completion</string>
+		<key>BRIDGE_FRESH_CHAT</key>
+		<string>false</string>
+		<key>BRIDGE_HEADLESS</key>
+		<string>true</string>
+		<key>BRIDGE_HOME</key>
+		<string>/Users/roseonyema/.deepseek-bridge</string>
+		<key>BRIDGE_INIT_JS</key>
+		<string>try{localStorage.setItem('searchEnabled', JSON.stringify({value:false,__version:"0"}));}catch(e){}</string>
+		<key>BRIDGE_PORT</key>
+		<string>8767</string>
+		<key>BRIDGE_READY_MARKERS</key>
+		<string>new chat,deepthink</string>
+		<key>BRIDGE_SEARCH_OFF</key>
+		<string>true</string>
+		<key>BRIDGE_SIGNIN_MARKERS</key>
+		<string></string>
+		<key>BRIDGE_URL</key>
+		<string>https://chat.deepseek.com/</string>
+		<key>PATH</key>
+		<string>/Users/roseonyema/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>ai.estate.deepseek-bridge</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Frameworks/Python.framework/Versions/3.12/bin/python3</string>
+		<string>/Users/roseonyema/Documents/code/estate-core/scripts/kimi_bridge.py</string>
+		<string>--daemon</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/roseonyema/.deepseek-bridge/logs/daemon.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/roseonyema/.deepseek-bridge/logs/daemon.log</string>
+	<key>ThrottleInterval</key>
+	<integer>10</integer>
+	<key>WorkingDirectory</key>
+	<string>/Users/roseonyema/.deepseek-bridge</string>
 </dict>
 </plist>
