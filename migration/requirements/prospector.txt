@@ -59,7 +59,7 @@ mistune==3.3.4
 mutmut==3.7.0
 mypy==2.3.1
 mypy-extensions==1.1.0
-nltk==3.10.3
+nltk==3.10.4
 numpy==2.5.2
 openai==3.3.1
 openpyxl==3.1.5
